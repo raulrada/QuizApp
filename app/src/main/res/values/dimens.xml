@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titleMarginStart">10dp</dimen>
+    <dimen name="titleMarginEnd">10dp</dimen>
+    <dimen name="titleMarginTop">10dp</dimen>
+    <dimen name="titleMarginBottom">10dp</dimen>
+    <dimen name="titleTextSize">20sp</dimen>
+
+    <dimen name="questionNumberMarginStart">10dp</dimen>
+    <dimen name="questionNumberMarginEnd">10dp</dimen>
+    <dimen name="questionNumberMarginTop">10dp</dimen>
+    <dimen name="questionNumberMarginBottom">0dp</dimen>
+    <dimen name="questionNumberTextSize">15sp</dimen>
+
+    <dimen name="regularTextQuizMarginStart">20dp</dimen>
+    <dimen name="regularTextQuizMarginEnd">20dp</dimen>
+    <dimen name="regularTextQuizMarginTop">10dp</dimen>
+    <dimen name="regularTextQuizMarginBottom">10dp</dimen>
+    <dimen name="regularTextTextSize">15sp</dimen>
+
+    <dimen name="regularTextResultMarginStart">20dp</dimen>
+    <dimen name="regularTextResultMarginEnd">20dp</dimen>
+    <dimen name="regularTextResultMarginTop">10dp</dimen>
+    <dimen name="regularTextResultMarginBottom">10dp</dimen>
+    <dimen name="regularTextResultTextSize">15sp</dimen>
+
+    <dimen name="editTextMarginStart">20dp</dimen>
+    <dimen name="editTextMarginEnd">20dp</dimen>
+    <dimen name="editTextMarginTop">0dp</dimen>
+    <dimen name="editTextMarginBottom">10dp</dimen>
+    <dimen name="editTextSize">17sp</dimen>
+
+    <dimen name="conditionsMarginStart">20dp</dimen>
+    <dimen name="conditionsMarginEnd">20dp</dimen>
+    <dimen name="conditionsMarginTop">0dp</dimen>
+    <dimen name="conditionsMarginBottom">0dp</dimen>
+    <dimen name="conditionsTextSize">15sp</dimen>
+
+    <dimen name="buttonMarginStart">10dp</dimen>
+    <dimen name="buttonMarginEnd">10dp</dimen>
+    <dimen name="buttonMarginTop">5dp</dimen>
+    <dimen name="buttonMarginBottom">5dp</dimen>
+    <dimen name="buttonTextSize">17sp</dimen>
+
+    <dimen name="radioButtonMarginStart">30dp</dimen>
+    <dimen name="radioButtonMarginEnd">20dp</dimen>
+    <dimen name="radioButtonMarginTop">10dp</dimen>
+    <dimen name="radioButtonMarginBottom">0dp</dimen>
+    <dimen name="radioButtonTextSize">17sp</dimen>
+    <dimen name="radioButtonTextPadding">20dp</dimen>
+
+    <dimen name="checkboxWelcomeTextPaddingLeft">0dp</dimen>
+
+    <dimen name="elevationPic">20dp</dimen>
+    <dimen name="elevation">10dp</dimen>
+    <dimen name="noHeight">0dp</dimen>
+    <dimen name="noWidth">0dp</dimen>
+
+
+</resources>

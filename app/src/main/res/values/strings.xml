@@ -1,0 +1,27 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Quiz App</string>
+
+    <string name="welcome_message">Welcome to the Country Capitals Quiz</string>
+    <string name="app_info">This quiz will test your knowledge of world countries capitals.\n\nFirst enter your name and please check the box confirming that you agree to the terms and conditions of this app. Note that otherwise you will not be able to start the quiz.\n\nThe test will consist of 10 questions each of which has one single correct answer. Please select the option you think is correct and press the Submit button. \n\nNote that you cannot go back and change a submitted answer. The Back button on your phone shall be disabled throughout this app.\n\nFinally, you give this app an explicit permission to access the e-mail clients installed on your phone, in case you choose to share your result with your friends.</string>
+
+    <string name="start_quiz">Start Quiz</string>
+    <string name="submit">Submit Answer</string>
+    <string name="name">Name</string>
+    <string name="agreement">I agree</string>
+
+    <string name="ask_question">What is the capital of %1$s?</string>
+    <string name="ask_question_result">What is the capital of: </string>
+
+    <string name="question">Question <xliff:g id="currentQuestionNumber" example="5">%s</xliff:g></string>
+
+    <string name="current_score">Current score: <xliff:g id="currentScore" example="7">%s</xliff:g> / <xliff:g id="maxCurrentScore" example="10">%s</xliff:g></string>
+    <string name="player_name">Player: <xliff:g id="testeeName" example="Paul">%s</xliff:g></string>
+
+    <string name="player_name_results"><xliff:g id="testeeName" example="Paul">%s</xliff:g>\'s results</string>
+
+    <string name="correct">That is correct</string>
+    <string name="wrong">That is wrong</string>
+
+    <string name="romania">Romania</string>
+
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/welcome_background_color_darker"
+    android:orientation="vertical"
+    tools:context="com.example.android.quizapp.WelcomeActivity">
+
+    <ImageView
+        style="@style/picture"
+        android:layout_weight="1"
+        android:src="@drawable/quizwelcome" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/noHeight"
+        android:layout_weight="2"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <FrameLayout style="@style/frameLayoutWelcome">
+
+            <TextView
+                android:id="@+id/welcome_text_view"
+                style="@style/text.title"
+                android:text="@string/welcome_message" />
+
+        </FrameLayout>
+
+        <FrameLayout style="@style/frameLayoutWelcome">
+
+            <EditText
+                android:id="@+id/name_edit_text"
+                style="@style/text.edit_text"
+                android:hint="@string/name" />
+
+        </FrameLayout>
+
+        <ScrollView
+            android:id="@+id/terms_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/noHeight"
+            android:layout_weight="1"
+            android:background="@color/welcome_background_color_lighter"
+            android:fillViewport="true">
+
+            <TextView
+                android:id="@+id/conditions_text_view"
+                style="@style/text.conditions"
+                android:text="@string/app_info" />
+
+        </ScrollView>
+
+        <FrameLayout style="@style/frameLayoutWelcome">
+
+            <CheckBox
+                android:id="@+id/agree_checkbox"
+                style="@style/text.checkbox"
+                android:text="@string/agreement" />
+
+        </FrameLayout>
+
+        <FrameLayout style="@style/frameLayoutWelcome">
+
+            <Button
+                android:id="@+id/start_quiz_button"
+                style="@style/button"
+                android:onClick="startQuiz"
+                android:text="@string/start_quiz" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

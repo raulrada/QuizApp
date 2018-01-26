@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#25a92d</color>
+
+    <color name="shadowColor">#FF424242</color>
+    <color name="welcome_background_color_darker">#cee7f5</color>
+    <color name="welcome_background_color_lighter">#ddeaf1</color>
+
+    <color name="buttonEnabledColor">#5970f5</color>
+    <color name="buttonDisabledColor">#a6accc</color>
+    <color name="buttonPressedColor">#172dab</color>
+    <color name="buttonEnabledTextColor">#000000</color>
+    <color name="buttonDisabledTextColor">#FF424242</color>
+
+    <color name="radioButtonQuizTextColor">#FF424242</color>
+    <color name="reqularQuizTextColor">#FF424242</color>
+    <color name="reqularResultTextColor">#FF424242</color>
+
+</resources>

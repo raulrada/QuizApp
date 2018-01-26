@@ -1,0 +1,154 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+
+    <style name="picture">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/noHeight</item>
+        <item name="android:elevation">@dimen/elevationPic</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:background">@color/welcome_background_color_darker</item>
+    </style>
+
+    <style name="picture_vertical">
+        <item name="android:layout_width">@dimen/noHeight</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:elevation">@dimen/elevationPic</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:background">@color/welcome_background_color_darker</item>
+    </style>
+
+
+    <style name="text">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="text.title">
+        <item name="android:layout_marginStart">@dimen/titleMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/titleMarginEnd</item>
+        <item name="android:layout_marginTop">@dimen/titleMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/titleMarginBottom</item>
+        <item name="android:textSize">@dimen/titleTextSize</item>
+        <item name="android:gravity">center</item>
+        <item name="android:shadowColor">@color/shadowColor</item>
+        <item name="android:shadowDx">10</item>
+        <item name="android:shadowDy">10</item>
+        <item name="android:shadowRadius">20</item>
+    </style>
+
+    <style name="text.edit_text">
+        <item name="android:layout_marginStart">@dimen/editTextMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/editTextMarginEnd</item>
+        <item name="android:layout_marginTop">@dimen/editTextMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/editTextMarginBottom</item>
+        <item name="android:textSize">@dimen/editTextSize</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+    </style>
+
+    <style name="text.conditions">
+        <item name="android:layout_marginStart">@dimen/conditionsMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/conditionsMarginEnd</item>
+        <item name="android:layout_marginTop">@dimen/conditionsMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/conditionsMarginBottom</item>
+        <item name="android:textSize">@dimen/conditionsTextSize</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="text.question_number">
+        <item name="android:layout_marginStart">@dimen/questionNumberMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/questionNumberMarginEnd</item>
+        <item name="android:layout_marginTop">@dimen/questionNumberMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/questionNumberMarginBottom</item>
+        <item name="android:textSize">@dimen/questionNumberTextSize</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="text.checkbox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingLeft">@dimen/checkboxWelcomeTextPaddingLeft</item>
+    </style>
+
+    <style name="text.regular_text_quiz">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/regularTextQuizMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/regularTextQuizMarginEnd</item>
+        <item name="android:layout_marginTop">@dimen/regularTextQuizMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/regularTextQuizMarginBottom</item>
+        <item name="android:textSize">@dimen/regularTextTextSize</item>
+        <item name="android:textColor">@color/reqularQuizTextColor</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+    <style name="text.result">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/regularTextResultMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/regularTextResultMarginEnd</item>
+        <item name="android:layout_marginTop">@dimen/regularTextResultMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/regularTextResultMarginBottom</item>
+        <item name="android:textSize">@dimen/regularTextResultTextSize</item>
+        <item name="android:textColor">@color/reqularResultTextColor</item>
+    </style>
+
+    <style name="text.result.start">
+        <item name="android:layout_alignParentStart">true</item>
+    </style>
+
+    <style name="text.result.center">
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="text.result.end">
+        <item name="android:layout_alignParentEnd">true</item>
+    </style>
+
+    <style name="frameLayoutWelcome">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/welcome_background_color_darker</item>
+        <item name="android:elevation">@dimen/elevation</item>
+    </style>
+
+    <style name="button">
+        <item name="android:layout_marginStart">@dimen/buttonMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/buttonMarginEnd</item>
+        <item name="android:layout_marginTop">@dimen/buttonMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/buttonMarginBottom</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:textColor">@drawable/buttontxtselector</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="radioButton">
+        <item name="android:layout_marginStart">@dimen/radioButtonMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/radioButtonMarginEnd</item>
+        <item name="android:layout_marginTop">@dimen/radioButtonMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/radioButtonMarginBottom</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/radioButtonTextPadding</item>
+        <item name="android:textColor">@color/radioButtonQuizTextColor</item>
+        <item name="android:textSize">@dimen/radioButtonTextSize</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+</resources>

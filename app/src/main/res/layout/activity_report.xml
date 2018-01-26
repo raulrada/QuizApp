@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/welcome_background_color_darker"
+    android:orientation="vertical"
+    tools:context="com.example.android.quizapp.ReportActivity">
+
+
+    <FrameLayout style="@style/frameLayoutWelcome">
+
+        <TextView
+            android:id="@+id/name_results_text_view"
+            style="@style/text.question_number" />
+
+    </FrameLayout>
+
+    <FrameLayout style="@style/frameLayoutWelcome">
+
+        <TextView
+            android:id="@+id/question_text_view_results"
+            style="@style/text.title"
+            android:text="@string/ask_question_result" />
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/welcome_background_color_lighter"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/noHeight"
+                android:layout_weight="1">
+
+                <TextView
+                    style="@style/text.result.start"
+                    android:text="Romania"/>
+
+                <TextView
+                    style="@style/text.result.center"
+                    android:text="Bucharest"/>
+
+                <TextView
+                    style="@style/text.result.end"
+                    android:text="Sofia"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/noHeight"
+                android:layout_weight="1">
+
+                <TextView
+                    style="@style/text.result.start"
+                    android:text="Romania"/>
+
+                <TextView
+                    style="@style/text.result.center"
+                    android:text="Bucharest"/>
+
+                <TextView
+                    style="@style/text.result.end"
+                    android:text="Sofia"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <FrameLayout style="@style/frameLayoutWelcome">
+
+        <Button
+            android:id="@+id/submit_button"
+            style="@style/button"
+
+            android:text="@string/submit" />
+
+    </FrameLayout>
+
+
+</LinearLayout>
+
+
