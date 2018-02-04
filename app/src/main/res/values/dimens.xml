@@ -24,6 +24,12 @@
     <dimen name="regularTextResultMarginBottom">10dp</dimen>
     <dimen name="regularTextResultTextSize">15sp</dimen>
 
+    <dimen name="resultTextResultMarginStart">20dp</dimen>
+    <dimen name="resultTextResultMarginEnd">20dp</dimen>
+    <dimen name="resultTextResultMarginTop">10dp</dimen>
+    <dimen name="resultTextResultMarginBottom">10dp</dimen>
+    <dimen name="resultTextResultTextSize">17sp</dimen>
+
     <dimen name="editTextMarginStart">20dp</dimen>
     <dimen name="editTextMarginEnd">20dp</dimen>
     <dimen name="editTextMarginTop">0dp</dimen>
@@ -42,6 +48,9 @@
     <dimen name="buttonMarginBottom">5dp</dimen>
     <dimen name="buttonTextSize">17sp</dimen>
 
+    <dimen name="resultButtonMarginStart">20dp</dimen>
+    <dimen name="resultButtonMarginEnd">20dp</dimen>
+
     <dimen name="radioButtonMarginStart">30dp</dimen>
     <dimen name="radioButtonMarginEnd">20dp</dimen>
     <dimen name="radioButtonMarginTop">10dp</dimen>
@@ -51,10 +60,19 @@
 
     <dimen name="checkboxWelcomeTextPaddingLeft">0dp</dimen>
 
+    <dimen name="lineMarginStart">20dp</dimen>
+    <dimen name="lineMarginEnd">20dp</dimen>
+    <dimen name="lineMarginTop">0dp</dimen>
+    <dimen name="lineMarginBottom">0dp</dimen>
+    <dimen name="lineThickness">2dp</dimen>
+
+
     <dimen name="elevationPic">20dp</dimen>
     <dimen name="elevation">10dp</dimen>
     <dimen name="noHeight">0dp</dimen>
     <dimen name="noWidth">0dp</dimen>
+
+    <dimen name="width_results_buttons">100dp</dimen>
 
 
 </resources>

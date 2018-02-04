@@ -95,7 +95,7 @@
     </style>
 
     <style name="text.result">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">@dimen/noWidth</item>
         <item name="android:layout_marginStart">@dimen/regularTextResultMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/regularTextResultMarginEnd</item>
         <item name="android:layout_marginTop">@dimen/regularTextResultMarginTop</item>
@@ -113,6 +113,24 @@
     </style>
 
     <style name="text.result.end">
+        <item name="android:layout_alignParentEnd">true</item>
+    </style>
+
+    <style name="text.summary">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/resultTextResultMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/resultTextResultMarginEnd</item>
+        <item name="android:layout_marginTop">@dimen/resultTextResultMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/resultTextResultMarginBottom</item>
+        <item name="android:textSize">@dimen/resultTextResultTextSize</item>
+        <item name="android:textColor">@color/summaryResultTextColor</item>
+    </style>
+
+    <style name="text.summary.start">
+        <item name="android:layout_alignParentStart">true</item>
+    </style>
+
+    <style name="text.summary.end">
         <item name="android:layout_alignParentEnd">true</item>
     </style>
 
@@ -138,6 +156,12 @@
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
+    <style name="button.result">
+        <item name="android:layout_width">@dimen/width_results_buttons</item>
+        <item name="android:layout_marginStart">@dimen/resultButtonMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/resultButtonMarginEnd</item>
+    </style>
+
     <style name="radioButton">
         <item name="android:layout_marginStart">@dimen/radioButtonMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/radioButtonMarginEnd</item>
@@ -149,6 +173,17 @@
         <item name="android:textColor">@color/radioButtonQuizTextColor</item>
         <item name="android:textSize">@dimen/radioButtonTextSize</item>
         <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="line">
+        <item name="android:layout_marginStart">@dimen/lineMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/lineMarginEnd</item>
+        <item name="android:layout_marginTop">@dimen/lineMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/lineMarginBottom</item>
+        <item name="android:layout_height">@dimen/lineThickness</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:elevation">@dimen/elevation</item>
+        <item name="android:background">@color/lineColor</item>
     </style>
 
 </resources>

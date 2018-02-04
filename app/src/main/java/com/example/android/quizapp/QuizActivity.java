@@ -151,6 +151,9 @@ public class QuizActivity extends AppCompatActivity {
 //                startReportIntent.putExtra("KEY_TESTEE_NAME", testeeName);
 //                startReportIntent.putExtra("KEY_TESTEE_SCORE", currentScore);
 //                startReportIntent.putExtra("KEY_MAX_SCORE",maxCurrentScore);
+//                startReportIntent.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
+//                startReportIntent.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
+//                startReportIntent.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
 //
 //                startDelay = new Runnable() {
 //                    @Override
@@ -354,6 +357,7 @@ public class QuizActivity extends AppCompatActivity {
             startReportIntent.putExtra("KEY_MAX_SCORE",maxCurrentScore);
             startReportIntent.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
             startReportIntent.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
+            startReportIntent.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
             startActivity(startReportIntent);
         }
     }

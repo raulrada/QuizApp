@@ -17,5 +17,13 @@
     <color name="radioButtonQuizTextColor">#FF424242</color>
     <color name="reqularQuizTextColor">#FF424242</color>
     <color name="reqularResultTextColor">#FF424242</color>
+    <color name="summaryResultTextColor">#FF424242</color>
+
+    <color name="correctAnswerColor">#17601c</color>
+    <color name="wrongAnswerColor">#d60e1f</color>
+
+
+    <color name="lineColor">#172dab</color>
+
 
 </resources>
