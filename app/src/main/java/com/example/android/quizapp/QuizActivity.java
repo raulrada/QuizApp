@@ -123,11 +123,11 @@ public class QuizActivity extends AppCompatActivity {
 
 
 
-        //@mentors: how can I change the code in the setOnClickListener to avoid messing up the quiz slide
+        //@Abhishek: how can I change the code in the setOnClickListener to avoid messing up the quiz slide
         //on rotating the screen (the question number is not updated, and neither is the country name, whereas
         // the list of cities is updated)???
         // Why do the onSaveInstanceState and onRestoreInstanceState methods
-        //not work properly???
+        //not work properly? What am I doing wrong?
 
         //delay moving on to the next question / next activity for as long as the toast with the
         //result of the question is being displayed
