@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -28,7 +27,6 @@ import java.util.*;
 
 
 public class QuizActivity extends AppCompatActivity {
-
 
     TextView testeeNameTextView;
     TextView questionTextView;
@@ -73,16 +71,8 @@ public class QuizActivity extends AppCompatActivity {
     private static final String KEY_CURRENT_SCORE = "currentScore";
     private static final String KEY_MAX_CURRENT_SCORE = "maxCurrentScore";
 
-
-    public static final int DELAY = 2000;
     public static final int NUMBER_OF_QUESTIONS = 10;
     public static final int NUMBER_OF_ANSWERS = 4;
-
-    //Handler setDelay;
-    //Runnable startDelay;
-    //Intent startReportIntent;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +88,6 @@ public class QuizActivity extends AppCompatActivity {
         testeeNameTextView = (TextView) findViewById(R.id.name_text_view_quiz);
         questionNumberTextView = (TextView) findViewById(R.id.question_number_text_view);
         testeeNameTextView.setText(getString(R.string.player_name,testeeName));
-
 
         questionTextView = (TextView) findViewById(R.id.question_text_view);
 
@@ -121,56 +110,6 @@ public class QuizActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) populateQuestion();
 
-
-
-        //@Abhishek: how can I change the code in the setOnClickListener to avoid messing up the quiz slide
-        //on rotating the screen (the question number is not updated, and neither is the country name, whereas
-        // the list of cities is updated)???
-        // Why do the onSaveInstanceState and onRestoreInstanceState methods
-        //not work properly? What am I doing wrong?
-
-        //delay moving on to the next question / next activity for as long as the toast with the
-        //result of the question is being displayed
-//        submitButton.setOnClickListener(new View.OnClickListener(){
-//
-//            @Override
-//            public void onClick(View v) {
-//                int selected = quizRadioGroup.getCheckedRadioButtonId();
-//                RadioButton b = findViewById(selected);
-//                selectedAnswer = (String) b.getText();
-//
-//                providedAnswers[currentQuestionNumber - 1] = selectedAnswer;
-//                correctAnswers[currentQuestionNumber - 1] = correctAnswer;
-//
-//                if (correctAnswer.equals(selectedAnswer))
-//                    Toast.makeText(getApplicationContext(),getText(R.string.correct),Toast.LENGTH_SHORT).show();
-//                else
-//                    Toast.makeText(getApplicationContext(),getText(R.string.wrong),Toast.LENGTH_SHORT).show();
-//
-//                startReportIntent = new Intent(v.getContext(), ReportActivity.class);
-//                startReportIntent.putExtra("KEY_TESTEE_NAME", testeeName);
-//                startReportIntent.putExtra("KEY_TESTEE_SCORE", currentScore);
-//                startReportIntent.putExtra("KEY_MAX_SCORE",maxCurrentScore);
-//                startReportIntent.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
-//                startReportIntent.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
-//                startReportIntent.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
-//
-//                startDelay = new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        if (currentQuestionNumber < NUMBER_OF_QUESTIONS)
-//                            populateQuestion();
-//                        else {
-//
-//                            startActivity(startReportIntent);
-//                        }
-//                    }
-//                };
-//                setDelay.postDelayed(startDelay, DELAY);
-//            }
-//        });
-
-
         //When an answer is selected, enable the Submit button
         quizRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -179,7 +118,6 @@ public class QuizActivity extends AppCompatActivity {
                 isSubmitEnabled = true;
             }
         });
-
     }
 
     /**
@@ -201,7 +139,6 @@ public class QuizActivity extends AppCompatActivity {
         //select a country name not already used, and then add it to the ArrayList with used country names;
         selectedCountry = selectValue(usedCountriesList, countries);
         usedCountriesList.add(selectedCountry);
-
 
         questionTextView.setText(getString(R.string.ask_question,selectedCountry));
 
@@ -308,7 +245,6 @@ public class QuizActivity extends AppCompatActivity {
         maxCurrentScore = savedInstanceState.getInt(KEY_MAX_CURRENT_SCORE);
 
         currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
-
     }
 
     @Override
@@ -327,7 +263,6 @@ public class QuizActivity extends AppCompatActivity {
 
         super.onSaveInstanceState(savedInstanceState);
     }
-
 
     public void submitAnswer(View view){
 
@@ -361,7 +296,6 @@ public class QuizActivity extends AppCompatActivity {
             startActivity(startReportIntent);
         }
     }
-
 
     /**
      * Method used to populate a HashMap from a res/xml file
@@ -432,5 +366,4 @@ public class QuizActivity extends AppCompatActivity {
     public void onBackPressed(){
 
     }
-
 }
