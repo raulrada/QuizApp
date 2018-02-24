@@ -8,22 +8,23 @@
     <string name="submit">Submit Answer</string>
     <string name="name">Name</string>
     <string name="agreement">I agree</string>
+    <string name="capital">Capital city</string>
 
     <string name="ask_question">What is the capital of %1$s?</string>
     <string name="ask_question_result">What is the capital of: </string>
 
-    <string name="question">Question <xliff:g id="currentQuestionNumber" example="5">%s</xliff:g></string>
+    <string name="question">Question <xliff:g example="5" id="currentQuestionNumber">%s</xliff:g></string>
 
-    <string name="current_score">Current score: <xliff:g id="currentScore" example="7">%s</xliff:g> / <xliff:g id="maxCurrentScore" example="10">%s</xliff:g></string>
-    <string name="player_name">Player: <xliff:g id="testeeName" example="Paul">%s</xliff:g></string>
+    <string name="current_score">Current score: <xliff:g example="7" id="currentScore">%s</xliff:g> / <xliff:g example="10" id="maxCurrentScore">%s</xliff:g></string>
+    <string name="player_name">Player: <xliff:g example="Paul" id="testeeName">%s</xliff:g></string>
 
-    <string name="player_name_results"><xliff:g id="testeeName" example="Paul">%s</xliff:g>\'s results:</string>
-    <string name="player_name_score"><xliff:g id="testeeName" example="Paul">%s</xliff:g>\'s final report:</string>
-    <string name="player_result_share_subject"><xliff:g id="testeeName" example="Paul">%s</xliff:g>\'s result at Capitals Quiz</string>
-    <string name="final_score"><xliff:g id="currentScore" example="7">%1$d</xliff:g> / <xliff:g id="maxCurrentScore" example="10">%2$d</xliff:g></string>
+    <string name="player_name_results"><xliff:g example="Paul" id="testeeName">%s</xliff:g>\'s results:</string>
+    <string name="player_name_score"><xliff:g example="Paul" id="testeeName">%s</xliff:g>\'s final report:</string>
+    <string name="player_result_share_subject"><xliff:g example="Paul" id="testeeName">%s</xliff:g>\'s result at Capitals Quiz</string>
+    <string name="final_score"><xliff:g example="7" id="currentScore">%1$d</xliff:g> / <xliff:g example="10" id="maxCurrentScore">%2$d</xliff:g></string>
 
-    <string name="share_message_congratulate">Raul hereby certifies that <xliff:g id="testeeName" example="Paul">%1$s</xliff:g> has provided <xliff:g id="currentScore" example="7">%2$d</xliff:g> correct answers out of a total of <xliff:g id="maxCurrentScore" example="10">%3$d</xliff:g> possible at his countries capitals quiz. Let\'s congratulate %1$s.</string>
-    <string name="share_message_encourage">Raul hereby certifies that <xliff:g id="testeeName" example="Paul">%1$s</xliff:g> has provided <xliff:g id="currentScore" example="7">%2$d</xliff:g> correct answers out of a total of <xliff:g id="maxCurrentScore" example="10">%3$d</xliff:g> possible at his countries capitals quiz. Let\'s encourage %1$s to do better next time.</string>
+    <string name="share_message_congratulate">Raul hereby certifies that <xliff:g example="Paul" id="testeeName">%1$s</xliff:g> has provided <xliff:g example="7" id="currentScore">%2$d</xliff:g> correct answers out of a total of <xliff:g example="10" id="maxCurrentScore">%3$d</xliff:g> possible at his countries capitals quiz. Let\'s congratulate %1$s.</string>
+    <string name="share_message_encourage">Raul hereby certifies that <xliff:g example="Paul" id="testeeName">%1$s</xliff:g> has provided <xliff:g example="7" id="currentScore">%2$d</xliff:g> correct answers out of a total of <xliff:g example="10" id="maxCurrentScore">%3$d</xliff:g> possible at his countries capitals quiz. Let\'s encourage %1$s to do better next time.</string>
 
     <string name="correct">That is correct</string>
     <string name="wrong">That is wrong</string>
@@ -36,7 +37,6 @@
     <string name="share_result">Share Result</string>
 
     <string name="romania">Romania</string>
-
 
 
 </resources>

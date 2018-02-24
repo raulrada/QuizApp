@@ -22,28 +22,28 @@ import java.util.Map;
 
 public class ReportActivity extends AppCompatActivity{
 
-    String testeeName;
+    private String testeeName;
 
-    String[] providedAnswers;
-    String[] correctAnswers;
+    private String[] providedAnswers;
+    private String[] correctAnswers;
 
-    TextView[] countriesTextViews;
-    TextView[] answersTextViews;
-    TextView[] correctAnswersTextViews;
+    private TextView[] countriesTextViews;
+    private TextView[] answersTextViews;
+    private TextView[] correctAnswersTextViews;
 
-    ArrayList<String> usedCapitalsList;
+    private ArrayList<String> usedCountriesList;
 
-    int currentScore;
-    int maxScorePossible;
-    int correctColor;
-    int wrongColor;
+    private int currentScore;
+    private int maxScorePossible;
+    private int correctColor;
+    private int wrongColor;
 
-    TextView nameResultsTextView;
-    TextView questionTextView;
-    TextView nameReportTextView;
-    TextView finalScoreTextView;
+    private TextView nameResultsTextView;
+    private TextView questionTextView;
+    private TextView nameReportTextView;
+    private TextView finalScoreTextView;
 
-    public static final int MIN_SCORE_CONGRATULATIONS = 9;
+    private static final int MIN_SCORE_CONGRATULATIONS = 9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +73,7 @@ public class ReportActivity extends AppCompatActivity{
 
         correctAnswers = getIntent().getStringArrayExtra("KEY_CORRECT_ANSWERS");
 
-        usedCapitalsList = getIntent().getStringArrayListExtra("KEY_USED_COUNTRIES");
+        usedCountriesList = getIntent().getStringArrayListExtra("KEY_USED_COUNTRIES");
 
         finalScoreTextView.setText(getString(R.string.final_score,currentScore, maxScorePossible));
 
@@ -93,7 +93,7 @@ public class ReportActivity extends AppCompatActivity{
                 findViewById(R.id.text_view_correct_answer_8),findViewById(R.id.text_view_correct_answer_9)};
 
         for(int i=0;i<countriesTextViews.length;i++){
-            countriesTextViews[i].setText(usedCapitalsList.get(i));
+            countriesTextViews[i].setText(usedCountriesList.get(i));
             answersTextViews[i].setText(providedAnswers[i]);
 
 

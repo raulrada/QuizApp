@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/welcome_background_color_darker"
+    android:orientation="vertical"
+    tools:context="com.example.android.quizapp.QuizOpenActivity">
+
+    <ImageView
+        style="@style/picture"
+        android:layout_weight="1.4"
+        android:src="@drawable/worldmap" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/noHeight"
+        android:layout_weight="2"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <FrameLayout style="@style/frameLayoutWelcome">
+
+            <TextView
+                android:id="@+id/question_number_text_view"
+                style="@style/text.question_number" />
+
+        </FrameLayout>
+
+        <FrameLayout style="@style/frameLayoutWelcome">
+
+            <TextView
+                android:id="@+id/question_text_view"
+                style="@style/text.title" />
+
+        </FrameLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/welcome_background_color_lighter"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/name_edit_text"
+                    style="@style/text.edit_text"
+                    android:hint="@string/capital" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom|center_horizontal">
+
+                    <TextView
+                        android:id="@+id/name_text_view_quiz"
+                        style="@style/text.regular_text_quiz"
+                        android:layout_alignParentBottom="true" />
+
+                    <TextView
+                        android:id="@+id/current_score_view_quiz"
+                        style="@style/text.regular_text_quiz"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toEndOf="@id/name_text_view_quiz" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+        <FrameLayout style="@style/frameLayoutWelcome">
+
+            <Button
+                android:id="@+id/submit_button"
+                style="@style/button"
+
+                android:text="@string/submit" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+

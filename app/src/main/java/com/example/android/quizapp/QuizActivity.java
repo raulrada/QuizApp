@@ -28,36 +28,36 @@ import java.util.*;
 
 public class QuizActivity extends AppCompatActivity {
 
-    TextView testeeNameTextView;
-    TextView questionTextView;
-    TextView questionNumberTextView;
-    TextView currentScoreTextView;
-    RadioGroup quizRadioGroup;
-    RadioButton answer1RadioButton;
-    RadioButton answer2RadioButton;
-    RadioButton answer3RadioButton;
-    RadioButton answer4RadioButton;
-    Button submitButton;
+    private TextView testeeNameTextView;
+    private TextView questionTextView;
+    private TextView questionNumberTextView;
+    private TextView currentScoreTextView;
+    private RadioGroup quizRadioGroup;
+    private RadioButton answer1RadioButton;
+    private RadioButton answer2RadioButton;
+    private RadioButton answer3RadioButton;
+    private RadioButton answer4RadioButton;
+    private Button submitButton;
 
-    int currentQuestionNumber = 0;
-    int currentScore = 0;
-    int maxCurrentScore = 0;
+    private int currentQuestionNumber = 0;
+    private int currentScore = 0;
+    private int maxCurrentScore = 0;
 
-    String selectedCountry;
-    String selectedAnswer;
-    String correctAnswer;
-    String testeeName;
+    private String selectedCountry;
+    private String selectedAnswer;
+    private String correctAnswer;
+    private String testeeName;
 
-    boolean isSubmitEnabled;
+    private boolean isSubmitEnabled;
 
-    String[] countries;
-    String[] capitals;
-    String[] answers;
-    String[] providedAnswers;
-    String[] correctAnswers;
+    private String[] countries;
+    private String[] capitals;
+    private String[] answers;
+    private String[] providedAnswers;
+    private String[] correctAnswers;
 
-    HashMap<String, String> countriesCapitals;
-    ArrayList<String> usedCountriesList;
+    private HashMap<String, String> countriesCapitals;
+    private ArrayList<String> usedCountriesList;
 
     private static final String KEY_TESTEE_NAME = "TesteeName";
     private static final String KEY_CURRENT_QUESTION_NUMBER = "currentQuestionNumber";
@@ -71,8 +71,8 @@ public class QuizActivity extends AppCompatActivity {
     private static final String KEY_CURRENT_SCORE = "currentScore";
     private static final String KEY_MAX_CURRENT_SCORE = "maxCurrentScore";
 
-    public static final int NUMBER_OF_QUESTIONS = 10;
-    public static final int NUMBER_OF_ANSWERS = 4;
+    private static final int NUMBER_OF_QUESTIONS = 10;
+    private static final int NUMBER_OF_ANSWERS = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

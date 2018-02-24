@@ -17,13 +17,13 @@ import android.widget.RadioGroup;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    String testeeName;
-    boolean isCheckboxChecked = false;
-    boolean isNameIntroduced = false;
+    private String testeeName;
+    private boolean isCheckboxChecked = false;
+    private boolean isNameIntroduced = false;
 
-    EditText nameEditText;
-    Button startQuizButton;
-    CheckBox agreeCheckBox;
+    private EditText nameEditText;
+    private Button startQuizButton;
+    private CheckBox agreeCheckBox;
 
 
     private static final String KEY_TESTEE_NAME = "TesteeName";
