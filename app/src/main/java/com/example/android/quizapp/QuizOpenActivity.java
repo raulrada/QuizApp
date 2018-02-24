@@ -1,13 +1,19 @@
 package com.example.android.quizapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.XmlResourceParser;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 import org.xmlpull.v1.XmlPullParser;
@@ -31,6 +37,7 @@ public class QuizOpenActivity extends AppCompatActivity {
     private int maxCurrentScore;
     private boolean isSubmitEnabled;
     private int currentQuestionNumber;
+    private int currentOpenQuestionsNumber = 0;
 
     private String selectedCountry;
     private String selectedAnswer;
@@ -43,6 +50,19 @@ public class QuizOpenActivity extends AppCompatActivity {
     private EditText answerEditText;
     private Button submitButton;
 
+    private static final int NUMBER_OPEN_QUESTIONS = 2;
+
+    private static final String KEY_TESTEE_NAME = "TesteeName";
+    private static final String KEY_CURRENT_QUESTION_NUMBER = "currentQuestionNumber";
+    private static final String KEY_CURRENT_OPEN_QUESTION_NUMBER = "currentOpenQuestionNumber";
+    private static final String KEY_USED_COUNTRIES = "usedCountries";
+    private static final String KEY_SELECTED_COUNTRY = "selectedCountry";
+    private static final String KEY_CORRECT_ANSWER = "correctAnswer";
+    private static final String KEY_PROVIDED_ANSWERS = "providedAnswers";
+    private static final String KEY_CORRECT_ANSWERS = "correctAnswers";
+    private static final String KEY_SUBMIT_ENABLED = "submitEnabled";
+    private static final String KEY_CURRENT_SCORE = "currentScore";
+    private static final String KEY_MAX_CURRENT_SCORE = "maxCurrentScore";
 
 
     @Override
@@ -79,8 +99,74 @@ public class QuizOpenActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) populateQuestion();
 
-    }
+        answerEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            /**
+             * Force introduction of an answer in the EditText before enabling the Submit button
+             * @param s
+             * @param start
+             * @param before
+             * @param count
+             */
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                selectedAnswer = answerEditText.getText().toString();
+                if (!TextUtils.isEmpty(selectedAnswer)){
+                    submitButton.setEnabled(true);
+                    isSubmitEnabled = true;
+                }
+                else {
+                    submitButton.setEnabled(false);
+                    isSubmitEnabled = false;
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        submitButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick (View view){
+
+                providedAnswers[currentQuestionNumber - 1] = selectedAnswer;
+                correctAnswers[currentQuestionNumber - 1] = correctAnswer;
+
+                maxCurrentScore += 1;
+
+                if (correctAnswer.equalsIgnoreCase(selectedAnswer)){
+                    Toast.makeText(getApplicationContext(),getText(R.string.correct),Toast.LENGTH_SHORT).show();
+                    currentScore += 1;}
+                else
+                    Toast.makeText(getApplicationContext(),getText(R.string.wrong),Toast.LENGTH_SHORT).show();
+
+                currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
+
+                if (currentOpenQuestionsNumber < NUMBER_OPEN_QUESTIONS)
+                    populateQuestion();
+                else {
+                    Intent startReportActivity = new Intent(QuizOpenActivity.this, ReportActivity.class);
+                    startReportActivity.putExtra("KEY_TESTEE_NAME", testeeName);
+                    startReportActivity.putExtra("KEY_TESTEE_SCORE", currentScore);
+                    startReportActivity.putExtra("KEY_MAX_SCORE",maxCurrentScore);
+                    startReportActivity.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
+                    startReportActivity.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
+                    startReportActivity.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
+                    startActivity(startReportActivity);
+                }
+
+            }
+
+        });
+
+    }
 
     /**
      *Populates layout with a country capital question
@@ -89,8 +175,10 @@ public class QuizOpenActivity extends AppCompatActivity {
 
         submitButton.setEnabled(false); //disable Submit button until an answer is selected
         isSubmitEnabled = false;
+        answerEditText.getText().clear();
 
-        currentQuestionNumber+=1;
+        currentQuestionNumber += 1;
+        currentOpenQuestionsNumber += 1;
         questionNumberTextView.setText(getString(R.string.question, String.valueOf(currentQuestionNumber)));
 
         currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
@@ -127,6 +215,59 @@ public class QuizOpenActivity extends AppCompatActivity {
             }
         }
         return returnValue;
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        testeeName = savedInstanceState.getString(KEY_TESTEE_NAME);
+
+        currentQuestionNumber = savedInstanceState.getInt(KEY_CURRENT_QUESTION_NUMBER);
+        questionNumberTextView.setText(getString(R.string.question, String.valueOf(currentQuestionNumber)));
+
+        currentOpenQuestionsNumber = savedInstanceState.getInt(KEY_CURRENT_OPEN_QUESTION_NUMBER);
+
+        usedCountriesList = savedInstanceState.getStringArrayList(KEY_USED_COUNTRIES);
+
+        selectedCountry = savedInstanceState.getString(KEY_SELECTED_COUNTRY);
+        questionTextView.setText(getString(R.string.ask_question,selectedCountry));
+
+        correctAnswer = savedInstanceState.getString(KEY_CORRECT_ANSWER);
+
+        providedAnswers = savedInstanceState.getStringArray(KEY_PROVIDED_ANSWERS);
+        correctAnswers = savedInstanceState.getStringArray(KEY_CORRECT_ANSWERS);
+
+        isSubmitEnabled = savedInstanceState.getBoolean(KEY_SUBMIT_ENABLED);
+
+        //restore the status of the Submit button
+        if (isSubmitEnabled)
+            submitButton.setEnabled(true);
+        else
+            submitButton.setEnabled(false);
+
+        currentScore = savedInstanceState.getInt(KEY_CURRENT_SCORE);
+        maxCurrentScore = savedInstanceState.getInt(KEY_MAX_CURRENT_SCORE);
+
+        currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+
+        savedInstanceState.putString(KEY_TESTEE_NAME,testeeName);
+        savedInstanceState.putInt(KEY_CURRENT_QUESTION_NUMBER, currentQuestionNumber);
+        savedInstanceState.putInt(KEY_CURRENT_OPEN_QUESTION_NUMBER, currentOpenQuestionsNumber);
+        savedInstanceState.putStringArrayList(KEY_USED_COUNTRIES, usedCountriesList);
+        savedInstanceState.putString(KEY_SELECTED_COUNTRY, selectedCountry);
+        savedInstanceState.putString(KEY_CORRECT_ANSWER, correctAnswer);
+        savedInstanceState.putStringArray(KEY_PROVIDED_ANSWERS, providedAnswers);
+        savedInstanceState.putStringArray(KEY_CORRECT_ANSWERS, correctAnswers);
+        savedInstanceState.putBoolean(KEY_SUBMIT_ENABLED, isSubmitEnabled);
+        savedInstanceState.putInt(KEY_CURRENT_SCORE, currentScore);
+        savedInstanceState.putInt(KEY_MAX_CURRENT_SCORE, maxCurrentScore);
+
+        super.onSaveInstanceState(savedInstanceState);
     }
 
 

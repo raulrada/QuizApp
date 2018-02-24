@@ -57,18 +57,20 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="bottom|center_horizontal">
+                    android:gravity="bottom|center">
 
                     <TextView
                         android:id="@+id/name_text_view_quiz_open"
                         style="@style/text.regular_text_quiz"
-                        android:layout_alignParentBottom="true" />
+                        android:layout_alignParentBottom="true"
+                        android:text="player"/>
 
                     <TextView
                         android:id="@+id/current_score_view_quiz_open"
                         style="@style/text.regular_text_quiz"
                         android:layout_alignParentBottom="true"
-                        android:layout_toEndOf="@id/name_text_view_quiz" />
+                        android:layout_toEndOf="@id/name_text_view_quiz_open"
+                        android:text="score"/>
 
                 </RelativeLayout>
 

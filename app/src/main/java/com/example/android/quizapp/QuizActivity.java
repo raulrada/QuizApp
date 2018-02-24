@@ -72,7 +72,7 @@ public class QuizActivity extends AppCompatActivity {
     private static final String KEY_MAX_CURRENT_SCORE = "maxCurrentScore";
 
     private static final int NUMBER_OF_QUESTIONS = 10;
-    private static final int NUMBER_OF_QUESTIONS_MULTIPLE_CHOICE = 6;
+    private static final int NUMBER_OF_QUESTIONS_MULTIPLE_CHOICE = 8;
     private static final int NUMBER_OF_ANSWERS = 4;
 
     @Override
@@ -130,7 +130,7 @@ public class QuizActivity extends AppCompatActivity {
 
         ArrayList<String> usedCapitalsList = new ArrayList<String>();
 
-        currentQuestionNumber+=1;
+        currentQuestionNumber += 1;
         questionNumberTextView.setText(getString(R.string.question, String.valueOf(currentQuestionNumber)));
 
         currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
@@ -239,7 +239,6 @@ public class QuizActivity extends AppCompatActivity {
         else
             submitButton.setEnabled(false);
 
-
         currentScore = savedInstanceState.getInt(KEY_CURRENT_SCORE);
         maxCurrentScore = savedInstanceState.getInt(KEY_MAX_CURRENT_SCORE);
 
@@ -285,14 +284,14 @@ public class QuizActivity extends AppCompatActivity {
         if (currentQuestionNumber < NUMBER_OF_QUESTIONS_MULTIPLE_CHOICE)
             populateQuestion();
         else {
-            Intent startReportIntent = new Intent(this, ReportActivity.class);
-            startReportIntent.putExtra("KEY_TESTEE_NAME", testeeName);
-            startReportIntent.putExtra("KEY_TESTEE_SCORE", currentScore);
-            startReportIntent.putExtra("KEY_MAX_SCORE",maxCurrentScore);
-            startReportIntent.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
-            startReportIntent.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
-            startReportIntent.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
-            startActivity(startReportIntent);
+            Intent startOpenQuizIntent = new Intent(this, QuizOpenActivity.class);
+            startOpenQuizIntent.putExtra("KEY_TESTEE_NAME", testeeName);
+            startOpenQuizIntent.putExtra("KEY_TESTEE_SCORE", currentScore);
+            startOpenQuizIntent.putExtra("KEY_MAX_SCORE",maxCurrentScore);
+            startOpenQuizIntent.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
+            startOpenQuizIntent.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
+            startOpenQuizIntent.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
+            startActivity(startOpenQuizIntent);
         }
     }
 
