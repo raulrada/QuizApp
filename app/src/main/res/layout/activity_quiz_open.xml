@@ -24,7 +24,7 @@
         <FrameLayout style="@style/frameLayoutWelcome">
 
             <TextView
-                android:id="@+id/question_number_text_view"
+                android:id="@+id/question_number_text_view_open"
                 style="@style/text.question_number" />
 
         </FrameLayout>
@@ -32,7 +32,7 @@
         <FrameLayout style="@style/frameLayoutWelcome">
 
             <TextView
-                android:id="@+id/question_text_view"
+                android:id="@+id/question_text_view_open"
                 style="@style/text.title" />
 
         </FrameLayout>
@@ -50,7 +50,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/name_edit_text"
+                    android:id="@+id/answer_edit_text_open"
                     style="@style/text.edit_text"
                     android:hint="@string/capital" />
 
@@ -60,12 +60,12 @@
                     android:gravity="bottom|center_horizontal">
 
                     <TextView
-                        android:id="@+id/name_text_view_quiz"
+                        android:id="@+id/name_text_view_quiz_open"
                         style="@style/text.regular_text_quiz"
                         android:layout_alignParentBottom="true" />
 
                     <TextView
-                        android:id="@+id/current_score_view_quiz"
+                        android:id="@+id/current_score_view_quiz_open"
                         style="@style/text.regular_text_quiz"
                         android:layout_alignParentBottom="true"
                         android:layout_toEndOf="@id/name_text_view_quiz" />
@@ -81,7 +81,7 @@
         <FrameLayout style="@style/frameLayoutWelcome">
 
             <Button
-                android:id="@+id/submit_button"
+                android:id="@+id/submit_button_open"
                 style="@style/button"
 
                 android:text="@string/submit" />

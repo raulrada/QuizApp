@@ -72,14 +72,13 @@ public class QuizActivity extends AppCompatActivity {
     private static final String KEY_MAX_CURRENT_SCORE = "maxCurrentScore";
 
     private static final int NUMBER_OF_QUESTIONS = 10;
+    private static final int NUMBER_OF_QUESTIONS_MULTIPLE_CHOICE = 6;
     private static final int NUMBER_OF_ANSWERS = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-
-        //setDelay = new Handler();
 
         providedAnswers = new String[NUMBER_OF_QUESTIONS];
         correctAnswers = new String[NUMBER_OF_QUESTIONS];
@@ -283,7 +282,7 @@ public class QuizActivity extends AppCompatActivity {
 
         currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
 
-        if (currentQuestionNumber < NUMBER_OF_QUESTIONS)
+        if (currentQuestionNumber < NUMBER_OF_QUESTIONS_MULTIPLE_CHOICE)
             populateQuestion();
         else {
             Intent startReportIntent = new Intent(this, ReportActivity.class);
