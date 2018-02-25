@@ -11,6 +11,7 @@
     <string name="capital">Capital city</string>
 
     <string name="ask_question">What is the capital of %1$s?</string>
+    <string name="ask_question_multiple">Which of the following capitals are located in %1$s</string>
     <string name="ask_question_result">What is the capital of: </string>
 
     <string name="question">Question <xliff:g example="5" id="currentQuestionNumber">%s</xliff:g></string>

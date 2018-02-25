@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+public class QuizMultipleActivity extends AppCompatActivity {
 
     private CheckBox[] checkBoxes;
     private ArrayList<String> europeanCapitals;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String[] REGIONS = {"Europe", "Asia", "the Americas", "Africa", "Oceania"};
 
-    private static final int NUMBER_MULTIPLE_QUESTIONS = 5;
+    private static final int NUMBER_MULTIPLE_QUESTIONS = 2;
     private static final int NUMBER_OF_ANSWERS = 6;
 
     private static final String KEY_USED_REGIONS = "usedRegions";
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         selectedRegion = selectValue(usedRegionsList, REGIONS);
         usedRegionsList.add(selectedRegion);
 
-        questionTextView.setText("Which of the following capitals are located in "+selectedRegion);
+        questionTextView.setText(getString(R.string.ask_question_multiple,selectedRegion));
 
         //randomly select capitals to be included in the question
         ArrayList<String> usedCapitalsList = new ArrayList<String>();
@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
         answers = savedInstanceState.getStringArray(KEY_ANSWERS);
         currentMultipleQuestionsNumber = savedInstanceState.getInt(KEY_CURRENT_MULTIPLE_QUESTION_NUMBER);
 
-        questionTextView.setText("Which of the following capitals are located in "+selectedRegion);
+        questionTextView.setText(getString(R.string.ask_question_multiple,selectedRegion));
         for (int i=0;i<checkBoxes.length;i++)
             checkBoxes[i].setText(answers[i]);
 
