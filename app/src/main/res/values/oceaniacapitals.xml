@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="oceania_capitals">
+        <item>Noumea</item>
+        <item>Suva</item>
+        <item>Port Vila</item>
+        <item>Wellington</item>
+        <item>Canberra</item>
+        <item>Port Moresby</item>
+        <item>Apia</item>
+        <item>South Tarawa</item>
+        <item>Honiara</item>
+        <item>Palikir</item>
+    </string-array>
+</resources>

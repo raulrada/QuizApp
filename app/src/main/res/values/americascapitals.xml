@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="americas_capitals">
+        <item>Bogota</item>
+        <item>Caracas</item>
+        <item>La Paz</item>
+        <item>Lima</item>
+        <item>Quito</item>
+        <item>Santiago</item>
+        <item>Asuncion</item>
+        <item>Georgetown</item>
+        <item>Paramaribo</item>
+        <item>San Jose</item>
+        <item>Managua</item>
+        <item>Panama City</item>
+        <item>Havana</item>
+        <item>Santo Domingo</item>
+        <item>Port-au-Prince</item>
+        <item>Kingston</item>
+        <item>Tegucigalpa</item>
+        <item>San Salvador</item>
+        <item>Guatemala City</item>
+        <item>Washington DC</item>
+        <item>Belmopan</item>
+        <item>Ottawa</item>
+    </string-array>
+</resources>

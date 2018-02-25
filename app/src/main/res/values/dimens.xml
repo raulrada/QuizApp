@@ -58,6 +58,13 @@
     <dimen name="radioButtonTextSize">17sp</dimen>
     <dimen name="radioButtonTextPadding">20dp</dimen>
 
+    <dimen name="checkBoxQuizMarginStart">30dp</dimen>
+    <dimen name="checkBoxQuizMarginEnd">20dp</dimen>
+    <dimen name="checkBoxQuizMarginTop">10dp</dimen>
+    <dimen name="checkBoxQuizMarginBottom">0dp</dimen>
+    <dimen name="checkBoxQuizTextPaddingLeft">5dp</dimen>
+    <dimen name="checkBoxQuizTextSize">17sp</dimen>
+
     <dimen name="checkboxWelcomeTextPaddingLeft">0dp</dimen>
 
     <dimen name="lineMarginStart">20dp</dimen>

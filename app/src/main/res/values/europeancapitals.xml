@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="european_capitals">
+        <item>Bucharest</item>
+        <item>Sofia</item>
+        <item>Belgrade</item>
+        <item>Paris</item>
+        <item>Athens</item>
+        <item>Kiev</item>
+        <item>Berlin</item>
+        <item>Vienna</item>
+        <item>Rome</item>
+        <item>Madrid</item>
+        <item>Helsinki</item>
+        <item>Lisbon</item>
+        <item>London</item>
+        <item>Moscow</item>
+        <item>Brussels</item>
+        <item>Amsterdam</item>
+        <item>Bern</item>
+        <item>Prague</item>
+        <item>Bratislava</item>
+        <item>Budapest</item>
+        <item>Ljubljana</item>
+        <item>Zagreb</item>
+        <item>Podgorica</item>
+        <item>Tirane</item>
+        <item>Skopje</item>
+        <item>Warsaw</item>
+        <item>Minsk</item>
+        <item>Vilnius</item>
+        <item>Riga</item>
+        <item>Tallin</item>
+        <item>Oslo</item>
+        <item>Stockholm</item>
+        <item>Copenhagen</item>
+        <item>Nicosia</item>
+        <item>Vaduz</item>
+        <item>Luxembourg City</item>
+        <item>Valletta</item>
+        <item>Andorra la Vella</item>
+        <item>Dublin</item>
+        <item>Reykjavik</item>
+        <item>Sarajevo</item>
+        <item>Chisinau</item>
+    </string-array>
+
+
+</resources>

@@ -83,6 +83,16 @@
         <item name="android:paddingLeft">@dimen/checkboxWelcomeTextPaddingLeft</item>
     </style>
 
+    <style name="text.checkbox.quiz">
+        <item name="android:layout_gravity">start</item>
+        <item name="android:paddingLeft">@dimen/checkBoxQuizTextPaddingLeft</item>
+        <item name="android:layout_marginStart">@dimen/checkBoxQuizMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/checkBoxQuizMarginEnd</item>
+        <item name="android:layout_marginTop">@dimen/checkBoxQuizMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/checkBoxQuizMarginBottom</item>
+        <item name="android:textSize">@dimen/checkBoxQuizTextSize</item>
+    </style>
+
     <style name="text.regular_text_quiz">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/regularTextQuizMarginStart</item>

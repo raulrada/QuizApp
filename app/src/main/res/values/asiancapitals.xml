@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="asian_capitals">
+        <item>New Delhi</item>
+        <item>Islamabad</item>
+        <item>Tehran</item>
+        <item>Baghdad</item>
+        <item>Damascus</item>
+        <item>Beirut</item>
+        <item>Jerusalem</item>
+        <item>Amman</item>
+        <item>Muscat</item>
+        <item>Abu Dhabi</item>
+        <item>Doha</item>
+        <item>Manama</item>
+        <item>Ulaanbaatar</item>
+        <item>Astana</item>
+        <item>Tashkent</item>
+        <item>Dushanbe</item>
+        <item>Kabul</item>
+        <item>Bishkek</item>
+        <item>Kathmandu</item>
+        <item>Dhaka</item>
+        <item>Thimphu</item>
+        <item>Naypyitaw</item>
+        <item>Vientiane</item>
+        <item>Hanoi</item>
+        <item>Phnom Penh</item>
+        <item>Manila</item>
+        <item>Amman</item>
+        <item>Male</item>
+    </string-array>
+
+</resources>

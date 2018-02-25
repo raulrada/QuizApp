@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="african_capitals">
+        <item>Cairo</item>
+        <item>Rabat</item>
+        <item>Tunis</item>
+        <item>Algiers</item>
+        <item>Luanda</item>
+        <item>Tripoli</item>
+        <item>Nouakchott</item>
+        <item>Accra</item>
+        <item>Yamoussoukro</item>
+        <item>Monrovia</item>
+        <item>Freetown</item>
+        <item>Conakry</item>
+        <item>Dakar</item>
+        <item>Yaounde</item>
+        <item>Windhoek</item>
+        <item>Gaborone</item>
+        <item>Harare</item>
+        <item>Maputo</item>
+        <item>Lusaka</item>
+        <item>Lilongwe</item>
+        <item>Dodoma</item>
+        <item>Nairobi</item>
+        <item>Kampala</item>
+        <item>Mogadishu</item>
+        <item>Addis Ababa</item>
+        <item>Khartoum</item>
+        <item>Juba</item>
+        <item>Asmara</item>
+        <item>Kinshasa</item>
+        <item>Brazzaville</item>
+        <item>Bangui</item>
+        <item>Libreville</item>
+        <item>Porto-Novo</item>
+        <item>Banjul</item>
+        <item>Bamako</item>
+        <item>Ouagadougou</item>
+        <item>Antananarivo</item>
+        <item>Port Louis</item>
+        <item>Victoria</item>
+    </string-array>
+
+</resources>

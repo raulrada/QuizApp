@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".QuizActivity" />
         <activity android:name=".ReportActivity" />
-        <activity android:name=".QuizOpenActivity"></activity>
+        <activity android:name=".QuizOpenActivity" />
+        <activity android:name=".QuizMultipleActivity"></activity>
     </application>
 
 </manifest>

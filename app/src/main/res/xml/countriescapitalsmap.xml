@@ -81,7 +81,7 @@
     <entry key="Iraq">Baghdad</entry>
     <entry key="Syria">Damascus</entry>
     <entry key="Lebanon">Beirut</entry>
-    <entry key="Israel">Jerusalem (limited recognition)</entry>
+    <entry key="Israel">Jerusalem</entry>
     <entry key="Jordan">Amman</entry>
     <entry key="Oman">Muscat</entry>
     <entry key="the United Arab Emirates">Abu Dhabi</entry>
@@ -113,7 +113,7 @@
     <entry key="Cambodia">Phnom Penh</entry>
     <entry key="the Philippines">Manila</entry>
     <entry key="Papua New Guinea">Port Moresby</entry>
-    <entry key="South Africa">Pretoria (executive), Bloemfontein (judicial) and Cape Town (legislative)</entry>
+    <entry key="South Africa (executive)">Pretoria</entry>
     <entry key="New Zealand">Wellington</entry>
     <entry key="Fiji">Suva</entry>
     <entry key="Vanuatu">Port Vila</entry>
@@ -155,6 +155,10 @@
     <entry key="Burkina Faso">Ouagadougou</entry>
     <entry key="Madagascar">Antananarivo</entry>
     <entry key="Mauritius">Port Louis</entry>
-    <entry key="the Maldives">Malé</entry>
+    <entry key="the Maldives">Male</entry>
     <entry key="Seychelles">Victoria</entry>
+    <entry key="Samoa">Apia</entry>
+    <entry key="Kiribati">South Tarawa</entry>
+    <entry key="Solomon Islands">Honiara</entry>
+    <entry key="the Federated States of Micronesia">Palikir</entry>
 </map>
