@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/welcome_background_color_darker"
+    android:orientation="horizontal"
+    tools:context="com.example.android.quizapp.QuizMultipleActivity">
+
+    <ImageView
+        style="@style/picture_vertical"
+        android:layout_weight="1.5"
+        android:src="@drawable/worldmap" />
+
+    <LinearLayout
+        android:layout_width="@dimen/noWidth"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <FrameLayout style="@style/frameLayoutWelcome">
+
+            <TextView
+                android:id="@+id/question_number_text_view_multiple"
+                style="@style/text.question_number" />
+
+        </FrameLayout>
+
+        <FrameLayout style="@style/frameLayoutWelcome">
+
+            <TextView
+                android:id="@+id/question_text_view_multiple"
+                style="@style/text.title" />
+
+        </FrameLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/welcome_background_color_lighter"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    style="@style/text.checkbox.quiz"
+                    android:id="@+id/checkbox1"/>
+
+                <CheckBox
+                    style="@style/text.checkbox.quiz"
+                    android:id="@+id/checkbox2"/>
+
+                <CheckBox
+                    style="@style/text.checkbox.quiz"
+                    android:id="@+id/checkbox3"/>
+
+                <CheckBox
+                    style="@style/text.checkbox.quiz"
+                    android:id="@+id/checkbox4"/>
+
+                <CheckBox
+                    style="@style/text.checkbox.quiz"
+                    android:id="@+id/checkbox5"/>
+
+                <CheckBox
+                    style="@style/text.checkbox.quiz"
+                    android:id="@+id/checkbox6"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/noHeight"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/name_text_view_quiz_multiple"
+                        style="@style/text.regular_text_quiz"
+                        android:layout_alignParentBottom="true" />
+
+                    <TextView
+                        android:id="@+id/current_score_view_quiz_multiple"
+                        style="@style/text.regular_text_quiz"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toEndOf="@id/name_text_view_quiz_multiple" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <FrameLayout style="@style/frameLayoutWelcome">
+
+            <Button
+                android:id="@+id/submit_button_multiple"
+                style="@style/button"
+                android:text="@string/submit" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
