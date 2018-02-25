@@ -95,7 +95,6 @@
 
         </ScrollView>
 
-
         <FrameLayout style="@style/frameLayoutWelcome">
 
             <Button

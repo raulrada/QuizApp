@@ -25,7 +25,7 @@
 
             <TextView
                 android:id="@+id/question_number_text_view"
-                style="@style/text.question_number"/>
+                style="@style/text.question_number" />
 
         </FrameLayout>
 
@@ -33,70 +33,67 @@
 
             <TextView
                 android:id="@+id/question_text_view"
-                style="@style/text.title"/>
+                style="@style/text.title" />
 
         </FrameLayout>
 
-       <ScrollView
-           android:layout_width="match_parent"
-           android:layout_height="0dp"
-           android:layout_weight="1"
-           android:background="@color/welcome_background_color_lighter"
-           android:fillViewport="true">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/welcome_background_color_lighter"
+            android:fillViewport="true">
 
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-               <RadioGroup
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:id="@+id/radio_group_quiz">
+                <RadioGroup
+                    android:id="@+id/radio_group_quiz"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                   <RadioButton
-                       android:id="@+id/answer1_rb"
-                       style="@style/radioButton"/>
+                    <RadioButton
+                        android:id="@+id/answer1_rb"
+                        style="@style/radioButton" />
 
-                   <RadioButton
-                       android:id="@+id/answer2_rb"
-                       style="@style/radioButton"/>
+                    <RadioButton
+                        android:id="@+id/answer2_rb"
+                        style="@style/radioButton" />
 
-                   <RadioButton
-                       android:id="@+id/answer3_rb"
-                       style="@style/radioButton"/>
+                    <RadioButton
+                        android:id="@+id/answer3_rb"
+                        style="@style/radioButton" />
 
-                   <RadioButton
-                       android:id="@+id/answer4_rb"
-                       style="@style/radioButton" />
+                    <RadioButton
+                        android:id="@+id/answer4_rb"
+                        style="@style/radioButton" />
 
-               </RadioGroup>
+                </RadioGroup>
 
-               <RelativeLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="@dimen/noHeight"
-                   android:layout_weight="1"
-                   android:gravity="center">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/noHeight"
+                    android:layout_weight="1"
+                    android:gravity="center">
 
-                   <TextView
-                       android:id="@+id/name_text_view_quiz"
-                       style="@style/text.regular_text_quiz"
-                       android:layout_alignParentBottom="true"
-                        />
+                    <TextView
+                        android:id="@+id/name_text_view_quiz"
+                        style="@style/text.regular_text_quiz"
+                        android:layout_alignParentBottom="true" />
 
-                   <TextView
-                       android:id="@+id/current_score_view_quiz"
-                       style="@style/text.regular_text_quiz"
-                       android:layout_alignParentBottom="true"
-                       android:layout_toEndOf="@id/name_text_view_quiz"/>
+                    <TextView
+                        android:id="@+id/current_score_view_quiz"
+                        style="@style/text.regular_text_quiz"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toEndOf="@id/name_text_view_quiz" />
 
-               </RelativeLayout>
+                </RelativeLayout>
 
-           </LinearLayout>
+            </LinearLayout>
 
-
-       </ScrollView>
-
+        </ScrollView>
 
 
         <FrameLayout style="@style/frameLayoutWelcome">

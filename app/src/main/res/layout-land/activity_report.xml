@@ -318,9 +318,7 @@
                 style="@style/text.summary.start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-
-                />
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:id="@+id/current_score_view_report"
@@ -330,6 +328,7 @@
                 android:layout_alignParentEnd="true" />
 
         </RelativeLayout>
+
     </FrameLayout>
 
     <FrameLayout style="@style/frameLayoutWelcome">
@@ -349,12 +348,12 @@
                 android:id="@+id/share_button"
                 style="@style/button.result"
                 android:layout_alignParentEnd="true"
-                android:text="@string/share_result"
-                android:onClick="share"/>
+                android:onClick="share"
+                android:text="@string/share_result" />
 
         </RelativeLayout>
-    </FrameLayout>
 
+    </FrameLayout>
 
 </LinearLayout>
 

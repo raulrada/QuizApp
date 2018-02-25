@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context="com.example.android.quizapp.ReportActivity">
 
-
     <FrameLayout style="@style/frameLayoutWelcome">
 
         <TextView
@@ -60,7 +59,6 @@
         android:layout_weight="1"
         android:background="@color/welcome_background_color_lighter"
         android:fillViewport="true">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -159,7 +157,6 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -205,7 +202,6 @@
                     android:layout_weight="1" />
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -298,9 +294,7 @@
 
             </LinearLayout>
 
-
         </LinearLayout>
-
 
     </ScrollView>
 
@@ -318,9 +312,7 @@
                 style="@style/text.summary.start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-
-                />
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:id="@+id/current_score_view_report"
@@ -330,6 +322,7 @@
                 android:layout_alignParentEnd="true" />
 
         </RelativeLayout>
+
     </FrameLayout>
 
     <FrameLayout style="@style/frameLayoutWelcome">
@@ -342,19 +335,19 @@
                 android:id="@+id/restart_button"
                 style="@style/button.result"
                 android:layout_alignParentStart="true"
-                android:text="@string/restart"
-                android:onClick="restart"/>
+                android:onClick="restart"
+                android:text="@string/restart" />
 
             <Button
                 android:id="@+id/share_button"
                 style="@style/button.result"
                 android:layout_alignParentEnd="true"
-                android:text="@string/share_result"
-                android:onClick="share"/>
+                android:onClick="share"
+                android:text="@string/share_result" />
 
         </RelativeLayout>
-    </FrameLayout>
 
+    </FrameLayout>
 
 </LinearLayout>
 
