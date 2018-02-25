@@ -95,14 +95,11 @@ public class ReportActivity extends AppCompatActivity{
         for(int i=0;i<countriesTextViews.length;i++){
             countriesTextViews[i].setText(usedCountriesList.get(i));
             answersTextViews[i].setText(providedAnswers[i]);
-
-
             correctAnswersTextViews[i].setText(correctAnswers[i]);
             if(providedAnswers[i].equals(correctAnswers[i]))
                 answersTextViews[i].setTextColor(correctColor);
             else
                 answersTextViews[i].setTextColor(wrongColor);
-
         }
 
     }

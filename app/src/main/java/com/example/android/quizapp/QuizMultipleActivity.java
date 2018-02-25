@@ -1,5 +1,6 @@
 package com.example.android.quizapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,8 +36,19 @@ public class QuizMultipleActivity extends AppCompatActivity {
     private Boolean[] logCheckedBoxes; //contains status of all checkboxes for all questions
     private Boolean[] logCorrectCheckBoxes; //contains info whether the checkboxes should have been checked for all questions
 
+    private TextView questionNumberTextView;
     private TextView questionTextView;
+    private TextView testeeNameTextView;
+    private TextView currentScoreTextView;
     private Button submitButton;
+
+    private String testeeName;
+    private String[] providedAnswers;
+    private String[] correctAnswers;
+    private int currentScore;
+    private int maxCurrentScore;
+    private int currentQuestionNumber;
+    private ArrayList<String> usedCountriesList;
 
     private static final String[] REGIONS = {"Europe", "Asia", "the Americas", "Africa", "Oceania"};
 
@@ -47,6 +59,13 @@ public class QuizMultipleActivity extends AppCompatActivity {
     private static final String KEY_SELECTED_REGION = "selectedRegion";
     private static final String KEY_ANSWERS = "answers";
     private static final String KEY_CURRENT_MULTIPLE_QUESTION_NUMBER = "currentOpenQuestionNumber";
+    private static final String KEY_TESTEE_NAME = "TesteeName";
+    private static final String KEY_CURRENT_QUESTION_NUMBER = "currentQuestionNumber";
+    private static final String KEY_PROVIDED_ANSWERS = "providedAnswers";
+    private static final String KEY_CORRECT_ANSWERS = "correctAnswers";
+    private static final String KEY_USED_COUNTRIES = "usedCountries";
+    private static final String KEY_CURRENT_SCORE = "currentScore";
+    private static final String KEY_MAX_CURRENT_SCORE = "maxCurrentScore";
 
 
     @Override
@@ -61,6 +80,7 @@ public class QuizMultipleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                maxCurrentScore++;
                 boolean isCorrect = true;
 
                 //get the region where the presence of the capitals should be checked
@@ -82,10 +102,14 @@ public class QuizMultipleActivity extends AppCompatActivity {
                         isCorrect = false;
                 }
 
-                if (isCorrect)
-                    Toast.makeText(getApplicationContext(),"correct", Toast.LENGTH_SHORT).show();
+                if (isCorrect){
+                    Toast.makeText(getApplicationContext(),getText(R.string.correct),Toast.LENGTH_SHORT).show();
+                    currentScore++;
+                }
                 else
-                    Toast.makeText(getApplicationContext(),"wrong", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),getText(R.string.wrong),Toast.LENGTH_SHORT).show();
+
+                currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
 
 
                 if (currentMultipleQuestionsNumber < NUMBER_MULTIPLE_QUESTIONS)
@@ -94,6 +118,15 @@ public class QuizMultipleActivity extends AppCompatActivity {
                     Log.v("rezultate", "lista capitale: " + Arrays.toString(logUsedCapitals));
                     Log.v("rezultate", "bifate: " + Arrays.toString(logCheckedBoxes));
                     Log.v("rezultate", "should be: " + Arrays.toString(logCorrectCheckBoxes));
+
+//                    Intent startReportActivity = new Intent(QuizOpenActivity.this, ReportActivity.class);
+//                    startReportActivity.putExtra("KEY_TESTEE_NAME", testeeName);
+//                    startReportActivity.putExtra("KEY_TESTEE_SCORE", currentScore);
+//                    startReportActivity.putExtra("KEY_MAX_SCORE",maxCurrentScore);
+//                    startReportActivity.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
+//                    startReportActivity.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
+//                    startReportActivity.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
+//                    startActivity(startReportActivity);
 
                 }
             }
@@ -124,6 +157,23 @@ public class QuizMultipleActivity extends AppCompatActivity {
         allCapitals.addAll(oceaniaCapitals);
 
         questionTextView = (TextView) findViewById(R.id.question_text_view_multiple);
+        questionNumberTextView = (TextView) findViewById(R.id.question_number_text_view_multiple);
+
+        testeeName = getIntent().getStringExtra("KEY_TESTEE_NAME");
+        testeeNameTextView = (TextView) findViewById(R.id.name_text_view_quiz_multiple);
+        testeeNameTextView.setText(getString(R.string.player_name,testeeName));
+
+        currentScore = getIntent().getIntExtra("KEY_TESTEE_SCORE", 0);
+        maxCurrentScore = getIntent().getIntExtra("KEY_MAX_SCORE",0);
+        currentScoreTextView = (TextView) findViewById(R.id.current_score_view_quiz_multiple);
+
+        providedAnswers = getIntent().getStringArrayExtra("KEY_PROVIDED_ANSWERS");
+
+        correctAnswers = getIntent().getStringArrayExtra("KEY_CORRECT_ANSWERS");
+
+        usedCountriesList = getIntent().getStringArrayListExtra("KEY_USED_COUNTRIES");
+
+        currentQuestionNumber = maxCurrentScore;
 
         submitButton = (Button) findViewById(R.id.submit_button_multiple);
 
@@ -150,7 +200,12 @@ public class QuizMultipleActivity extends AppCompatActivity {
         for (int i=0; i<checkBoxes.length;i++)
             checkBoxes[i].setChecked(false);
 
+        currentQuestionNumber++;
         currentMultipleQuestionsNumber++;
+
+        questionNumberTextView.setText(getString(R.string.question, String.valueOf(currentQuestionNumber)));
+
+        currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
 
         //select a region not previously used, and then add it to the ArrayList containing used regions
         selectedRegion = selectValue(usedRegionsList, REGIONS);
@@ -231,6 +286,19 @@ public class QuizMultipleActivity extends AppCompatActivity {
         for (int i=0;i<checkBoxes.length;i++)
             checkBoxes[i].setText(answers[i]);
 
+        testeeName = savedInstanceState.getString(KEY_TESTEE_NAME);
+
+        currentQuestionNumber = savedInstanceState.getInt(KEY_CURRENT_QUESTION_NUMBER);
+        questionNumberTextView.setText(getString(R.string.question, String.valueOf(currentQuestionNumber)));
+
+        providedAnswers = savedInstanceState.getStringArray(KEY_PROVIDED_ANSWERS);
+        correctAnswers = savedInstanceState.getStringArray(KEY_CORRECT_ANSWERS);
+        usedCountriesList = savedInstanceState.getStringArrayList(KEY_USED_COUNTRIES);
+
+        currentScore = savedInstanceState.getInt(KEY_CURRENT_SCORE);
+        maxCurrentScore = savedInstanceState.getInt(KEY_MAX_CURRENT_SCORE);
+        currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
+
     }
 
     @Override
@@ -240,6 +308,13 @@ public class QuizMultipleActivity extends AppCompatActivity {
         savedInstanceState.putString(KEY_SELECTED_REGION, selectedRegion);
         savedInstanceState.putStringArray(KEY_ANSWERS, answers);
         savedInstanceState.putInt(KEY_CURRENT_MULTIPLE_QUESTION_NUMBER, currentMultipleQuestionsNumber);
+        savedInstanceState.putString(KEY_TESTEE_NAME,testeeName);
+        savedInstanceState.putInt(KEY_CURRENT_QUESTION_NUMBER, currentQuestionNumber);
+        savedInstanceState.putStringArray(KEY_PROVIDED_ANSWERS, providedAnswers);
+        savedInstanceState.putStringArray(KEY_CORRECT_ANSWERS, correctAnswers);
+        savedInstanceState.putStringArrayList(KEY_USED_COUNTRIES, usedCountriesList);
+        savedInstanceState.putInt(KEY_CURRENT_SCORE, currentScore);
+        savedInstanceState.putInt(KEY_MAX_CURRENT_SCORE, maxCurrentScore);
 
         super.onSaveInstanceState(savedInstanceState);
     }

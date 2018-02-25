@@ -152,14 +152,14 @@ public class QuizOpenActivity extends AppCompatActivity {
                 if (currentOpenQuestionsNumber < NUMBER_OPEN_QUESTIONS)
                     populateQuestion();
                 else {
-                    Intent startReportActivity = new Intent(QuizOpenActivity.this, ReportActivity.class);
-                    startReportActivity.putExtra("KEY_TESTEE_NAME", testeeName);
-                    startReportActivity.putExtra("KEY_TESTEE_SCORE", currentScore);
-                    startReportActivity.putExtra("KEY_MAX_SCORE",maxCurrentScore);
-                    startReportActivity.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
-                    startReportActivity.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
-                    startReportActivity.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
-                    startActivity(startReportActivity);
+                    Intent startQuizMultipleActivity = new Intent(QuizOpenActivity.this, QuizMultipleActivity.class);
+                    startQuizMultipleActivity.putExtra("KEY_TESTEE_NAME", testeeName);
+                    startQuizMultipleActivity.putExtra("KEY_TESTEE_SCORE", currentScore);
+                    startQuizMultipleActivity.putExtra("KEY_MAX_SCORE",maxCurrentScore);
+                    startQuizMultipleActivity.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
+                    startQuizMultipleActivity.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
+                    startQuizMultipleActivity.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
+                    startActivity(startQuizMultipleActivity);
                 }
 
             }

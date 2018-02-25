@@ -80,15 +80,15 @@
                     android:gravity="center">
 
                     <TextView
-                        android:id="@+id/name_text_view_quiz"
+                        android:id="@+id/name_text_view_quiz_multiple"
                         style="@style/text.regular_text_quiz"
                         android:layout_alignParentBottom="true" />
 
                     <TextView
-                        android:id="@+id/current_score_view_quiz"
+                        android:id="@+id/current_score_view_quiz_multiple"
                         style="@style/text.regular_text_quiz"
                         android:layout_alignParentBottom="true"
-                        android:layout_toEndOf="@id/name_text_view_quiz" />
+                        android:layout_toEndOf="@id/name_text_view_quiz_multiple" />
 
                 </RelativeLayout>
 
