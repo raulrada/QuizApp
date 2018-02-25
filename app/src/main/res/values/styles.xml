@@ -19,7 +19,7 @@
     </style>
 
     <style name="picture_vertical">
-        <item name="android:layout_width">@dimen/noHeight</item>
+        <item name="android:layout_width">@dimen/noWidth</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:elevation">@dimen/elevationPic</item>
         <item name="android:scaleType">centerCrop</item>

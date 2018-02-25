@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/welcome_background_color_darker"
     android:orientation="horizontal"
-    tools:context="com.example.android.quizapp.QuizActivity">
+    tools:context="com.example.android.quizapp.QuizOpenActivity">
 
     <ImageView
         style="@style/picture_vertical"
@@ -24,7 +24,7 @@
         <FrameLayout style="@style/frameLayoutWelcome">
 
             <TextView
-                android:id="@+id/question_number_text_view"
+                android:id="@+id/question_number_text_view_open"
                 style="@style/text.question_number" />
 
         </FrameLayout>
@@ -32,7 +32,7 @@
         <FrameLayout style="@style/frameLayoutWelcome">
 
             <TextView
-                android:id="@+id/question_text_view"
+                android:id="@+id/question_text_view_open"
                 style="@style/text.title" />
 
         </FrameLayout>
@@ -49,49 +49,33 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <RadioGroup
-                    android:id="@+id/radio_group_quiz"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/answer1_rb"
-                        style="@style/radioButton" />
-
-                    <RadioButton
-                        android:id="@+id/answer2_rb"
-                        style="@style/radioButton" />
-
-                    <RadioButton
-                        android:id="@+id/answer3_rb"
-                        style="@style/radioButton" />
-
-                    <RadioButton
-                        android:id="@+id/answer4_rb"
-                        style="@style/radioButton" />
-
-                </RadioGroup>
+                <EditText
+                    android:id="@+id/answer_edit_text_open"
+                    style="@style/text.edit_text"
+                    android:hint="@string/capital" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/noHeight"
-                    android:layout_weight="1"
-                    android:gravity="center">
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom|center">
 
                     <TextView
-                        android:id="@+id/name_text_view_quiz"
-                        style="@style/text.regular_text_quiz"
-                        android:layout_alignParentBottom="true" />
-
-                    <TextView
-                        android:id="@+id/current_score_view_quiz"
+                        android:id="@+id/name_text_view_quiz_open"
                         style="@style/text.regular_text_quiz"
                         android:layout_alignParentBottom="true"
-                        android:layout_toEndOf="@id/name_text_view_quiz" />
+                        android:text="player"/>
+
+                    <TextView
+                        android:id="@+id/current_score_view_quiz_open"
+                        style="@style/text.regular_text_quiz"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toEndOf="@id/name_text_view_quiz_open"
+                        android:text="score"/>
 
                 </RelativeLayout>
 
             </LinearLayout>
+
 
         </ScrollView>
 
@@ -99,9 +83,9 @@
         <FrameLayout style="@style/frameLayoutWelcome">
 
             <Button
-                android:id="@+id/submit_button"
+                android:id="@+id/submit_button_open"
                 style="@style/button"
-                android:onClick="submitAnswer"
+
                 android:text="@string/submit" />
 
         </FrameLayout>
