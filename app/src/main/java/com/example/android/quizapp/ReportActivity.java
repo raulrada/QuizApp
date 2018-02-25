@@ -15,6 +15,7 @@ import org.w3c.dom.Text;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -26,6 +27,10 @@ public class ReportActivity extends AppCompatActivity{
 
     private String[] providedAnswers;
     private String[] correctAnswers;
+
+    private String[] logUsedCapitals;
+    private boolean[] logCheckedBoxes;
+    private boolean[] logCorrectCheckBoxes;
 
     private TextView[] countriesTextViews;
     private TextView[] answersTextViews;
@@ -43,7 +48,8 @@ public class ReportActivity extends AppCompatActivity{
     private TextView nameReportTextView;
     private TextView finalScoreTextView;
 
-    private static final int MIN_SCORE_CONGRATULATIONS = 9;
+    private static final int MIN_SCORE_CONGRATULATIONS = 10;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +80,12 @@ public class ReportActivity extends AppCompatActivity{
         correctAnswers = getIntent().getStringArrayExtra("KEY_CORRECT_ANSWERS");
 
         usedCountriesList = getIntent().getStringArrayListExtra("KEY_USED_COUNTRIES");
+
+        logUsedCapitals = getIntent().getStringArrayExtra("KEY_LIST_CAPITALS_MULTIPLE");
+
+        logCheckedBoxes =  getIntent().getBooleanArrayExtra("KEY_CHECKED_BOXES_MULTIPLE");
+
+        logCorrectCheckBoxes = getIntent().getBooleanArrayExtra("KEY_CORRECT_CHECKED_BOXES_MULTIPLE");
 
         finalScoreTextView.setText(getString(R.string.final_score,currentScore, maxScorePossible));
 

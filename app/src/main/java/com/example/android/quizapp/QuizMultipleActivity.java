@@ -33,8 +33,8 @@ public class QuizMultipleActivity extends AppCompatActivity {
 
     private String[] answers;
     private String[] logUsedCapitals; //contains all potential answers for all questions
-    private Boolean[] logCheckedBoxes; //contains status of all checkboxes for all questions
-    private Boolean[] logCorrectCheckBoxes; //contains info whether the checkboxes should have been checked for all questions
+    private boolean[] logCheckedBoxes; //contains status of all checkboxes for all questions
+    private boolean[] logCorrectCheckBoxes; //contains info whether the checkboxes should have been checked for all questions
 
     private TextView questionNumberTextView;
     private TextView questionTextView;
@@ -66,6 +66,9 @@ public class QuizMultipleActivity extends AppCompatActivity {
     private static final String KEY_USED_COUNTRIES = "usedCountries";
     private static final String KEY_CURRENT_SCORE = "currentScore";
     private static final String KEY_MAX_CURRENT_SCORE = "maxCurrentScore";
+    private static final String KEY_LOG_USED_CAPITALS = "logUsedCapitals";
+    private static final String KEY_LOG_CHECKED_CHECKBOXES = "logCheckedCheckBoxes";
+    private static final String KEY_LOG_CORRECT_CHECKED_CHECKBOXES = "logCorrectCheckedCheckBoxes";
 
 
     @Override
@@ -119,14 +122,17 @@ public class QuizMultipleActivity extends AppCompatActivity {
                     Log.v("rezultate", "bifate: " + Arrays.toString(logCheckedBoxes));
                     Log.v("rezultate", "should be: " + Arrays.toString(logCorrectCheckBoxes));
 
-//                    Intent startReportActivity = new Intent(QuizOpenActivity.this, ReportActivity.class);
-//                    startReportActivity.putExtra("KEY_TESTEE_NAME", testeeName);
-//                    startReportActivity.putExtra("KEY_TESTEE_SCORE", currentScore);
-//                    startReportActivity.putExtra("KEY_MAX_SCORE",maxCurrentScore);
-//                    startReportActivity.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
-//                    startReportActivity.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
-//                    startReportActivity.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
-//                    startActivity(startReportActivity);
+                    Intent startReportActivity = new Intent(QuizMultipleActivity.this, ReportActivity.class);
+                    startReportActivity.putExtra("KEY_TESTEE_NAME", testeeName);
+                    startReportActivity.putExtra("KEY_TESTEE_SCORE", currentScore);
+                    startReportActivity.putExtra("KEY_MAX_SCORE",maxCurrentScore);
+                    startReportActivity.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
+                    startReportActivity.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
+                    startReportActivity.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
+                    startReportActivity.putExtra("KEY_LIST_CAPITALS_MULTIPLE", logUsedCapitals);
+                    startReportActivity.putExtra("KEY_CHECKED_BOXES_MULTIPLE", logCheckedBoxes);
+                    startReportActivity.putExtra("KEY_CORRECT_CHECKED_BOXES_MULTIPLE", logCorrectCheckBoxes);
+                    startActivity(startReportActivity);
 
                 }
             }
@@ -182,8 +188,8 @@ public class QuizMultipleActivity extends AppCompatActivity {
         answers = new String[NUMBER_OF_ANSWERS];
 
         logUsedCapitals = new String[NUMBER_OF_ANSWERS*NUMBER_MULTIPLE_QUESTIONS];
-        logCheckedBoxes = new Boolean[NUMBER_OF_ANSWERS*NUMBER_MULTIPLE_QUESTIONS];
-        logCorrectCheckBoxes = new Boolean[NUMBER_OF_ANSWERS*NUMBER_MULTIPLE_QUESTIONS];
+        logCheckedBoxes = new boolean[NUMBER_OF_ANSWERS*NUMBER_MULTIPLE_QUESTIONS];
+        logCorrectCheckBoxes = new boolean[NUMBER_OF_ANSWERS*NUMBER_MULTIPLE_QUESTIONS];
 
         //HashMap mapping from the String region to the appropriate ArrayList
         regionsMap = new HashMap<String, ArrayList<String>>();
@@ -299,6 +305,10 @@ public class QuizMultipleActivity extends AppCompatActivity {
         maxCurrentScore = savedInstanceState.getInt(KEY_MAX_CURRENT_SCORE);
         currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
 
+        logUsedCapitals = savedInstanceState.getStringArray(KEY_LOG_USED_CAPITALS);
+        logCheckedBoxes = savedInstanceState.getBooleanArray(KEY_LOG_CHECKED_CHECKBOXES);
+        logCorrectCheckBoxes = savedInstanceState.getBooleanArray(KEY_LOG_CORRECT_CHECKED_CHECKBOXES);
+
     }
 
     @Override
@@ -315,6 +325,9 @@ public class QuizMultipleActivity extends AppCompatActivity {
         savedInstanceState.putStringArrayList(KEY_USED_COUNTRIES, usedCountriesList);
         savedInstanceState.putInt(KEY_CURRENT_SCORE, currentScore);
         savedInstanceState.putInt(KEY_MAX_CURRENT_SCORE, maxCurrentScore);
+        savedInstanceState.putStringArray(KEY_LOG_USED_CAPITALS, logUsedCapitals);
+        savedInstanceState.putBooleanArray(KEY_LOG_CHECKED_CHECKBOXES, logCheckedBoxes);
+        savedInstanceState.putBooleanArray(KEY_LOG_CORRECT_CHECKED_CHECKBOXES, logCorrectCheckBoxes);
 
         super.onSaveInstanceState(savedInstanceState);
     }
