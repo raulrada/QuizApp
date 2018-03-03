@@ -37,6 +37,7 @@ public class ReportActivity extends AppCompatActivity{
     private TextView[] correctAnswersTextViews;
 
     private ArrayList<String> usedCountriesList;
+    private ArrayList<String> usedRegionsList;
 
     private int currentScore;
     private int maxScorePossible;
@@ -44,7 +45,6 @@ public class ReportActivity extends AppCompatActivity{
     private int wrongColor;
 
     private TextView nameResultsTextView;
-    private TextView questionTextView;
     private TextView nameReportTextView;
     private TextView finalScoreTextView;
 
@@ -69,8 +69,6 @@ public class ReportActivity extends AppCompatActivity{
         nameReportTextView.setText(getString(R.string.player_name_results,testeeName));
         nameResultsTextView.setText(getString(R.string.player_name_score,testeeName));
 
-        //questionTextView = (TextView) findViewById(R.id.question_text_view_results);
-
         currentScore = getIntent().getIntExtra("KEY_TESTEE_SCORE", 0);
 
         maxScorePossible = getIntent().getIntExtra("KEY_MAX_SCORE",0);
@@ -80,6 +78,8 @@ public class ReportActivity extends AppCompatActivity{
         correctAnswers = getIntent().getStringArrayExtra("KEY_CORRECT_ANSWERS");
 
         usedCountriesList = getIntent().getStringArrayListExtra("KEY_USED_COUNTRIES");
+
+        usedRegionsList = getIntent().getStringArrayListExtra("USED_REGIONS_LIST");
 
         logUsedCapitals = getIntent().getStringArrayExtra("KEY_LIST_CAPITALS_MULTIPLE");
 
@@ -104,7 +104,7 @@ public class ReportActivity extends AppCompatActivity{
                 findViewById(R.id.text_view_correct_answer_5),findViewById(R.id.text_view_correct_answer_6),findViewById(R.id.text_view_correct_answer_7),
                 findViewById(R.id.text_view_correct_answer_8),findViewById(R.id.text_view_correct_answer_9)};
 
-        for(int i=0;i<countriesTextViews.length;i++){
+        for(int i = 0; i < countriesTextViews.length;i++){
             countriesTextViews[i].setText(usedCountriesList.get(i));
             answersTextViews[i].setText(providedAnswers[i]);
             correctAnswersTextViews[i].setText(correctAnswers[i]);
@@ -116,16 +116,28 @@ public class ReportActivity extends AppCompatActivity{
 
     }
 
+
+
+    public void next(View view){
+        Intent startNextReport = new Intent(this, ReportActivity2.class);
+        startNextReport.putExtra("KEY_TESTEE_NAME", testeeName);
+        startNextReport.putExtra("KEY_TESTEE_SCORE", currentScore);
+        startNextReport.putExtra("KEY_MAX_SCORE", maxScorePossible);
+        startNextReport.putExtra("KEY_PROVIDED_ANSWERS", providedAnswers);
+        startNextReport.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
+        startNextReport.putStringArrayListExtra("KEY_USED_COUNTRIES", usedCountriesList);
+        startNextReport.putExtra("KEY_LIST_CAPITALS_MULTIPLE", logUsedCapitals);
+        startNextReport.putExtra("KEY_CHECKED_BOXES_MULTIPLE", logCheckedBoxes);
+        startNextReport.putExtra("KEY_CORRECT_CHECKED_BOXES_MULTIPLE", logCorrectCheckBoxes);
+        startNextReport.putStringArrayListExtra("USED_REGIONS_LIST", usedRegionsList);
+        startActivity(startNextReport);
+    }
+
+
     /**
      * Restart the quiz for the current player
      * @param view
      */
-
-    public void next(View view){
-        Intent nextReport = new Intent(this, ReportActivity2.class);
-        startActivity(nextReport);
-    }
-
     public void restart(View view){
         Intent startQuizIntent = new Intent (this, QuizActivity.class);
         startQuizIntent.putExtra("KEY_TESTEE_NAME", testeeName);

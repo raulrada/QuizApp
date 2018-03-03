@@ -17,44 +17,9 @@ import java.util.Random;
 
 public class QuizMultipleActivity extends AppCompatActivity {
 
-    private CheckBox[] checkBoxes;
-    private ArrayList<String> europeanCapitals;
-    private ArrayList<String> asianCapitals;
-    private ArrayList<String> americasCapitals;
-    private ArrayList<String> africanCapitals;
-    private ArrayList<String> oceaniaCapitals;
-    private ArrayList<String> allCapitals;
-
-    private int currentMultipleQuestionsNumber = 0;
-
-    private String selectedRegion;
-    private ArrayList<String> usedRegionsList;
-    private HashMap<String, ArrayList<String>> regionsMap;
-
-    private String[] answers;
-    private String[] logUsedCapitals; //contains all potential answers for all questions
-    private boolean[] logCheckedBoxes; //contains status of all checkboxes for all questions
-    private boolean[] logCorrectCheckBoxes; //contains info whether the checkboxes should have been checked for all questions
-
-    private TextView questionNumberTextView;
-    private TextView questionTextView;
-    private TextView testeeNameTextView;
-    private TextView currentScoreTextView;
-    private Button submitButton;
-
-    private String testeeName;
-    private String[] providedAnswers;
-    private String[] correctAnswers;
-    private int currentScore;
-    private int maxCurrentScore;
-    private int currentQuestionNumber;
-    private ArrayList<String> usedCountriesList;
-
     private static final String[] REGIONS = {"Europe", "Asia", "the Americas", "Africa", "Oceania"};
-
     private static final int NUMBER_MULTIPLE_QUESTIONS = 2;
     private static final int NUMBER_OF_ANSWERS = 6;
-
     private static final String KEY_USED_REGIONS = "usedRegions";
     private static final String KEY_SELECTED_REGION = "selectedRegion";
     private static final String KEY_ANSWERS = "answers";
@@ -69,7 +34,33 @@ public class QuizMultipleActivity extends AppCompatActivity {
     private static final String KEY_LOG_USED_CAPITALS = "logUsedCapitals";
     private static final String KEY_LOG_CHECKED_CHECKBOXES = "logCheckedCheckBoxes";
     private static final String KEY_LOG_CORRECT_CHECKED_CHECKBOXES = "logCorrectCheckedCheckBoxes";
-
+    private CheckBox[] checkBoxes;
+    private ArrayList<String> europeanCapitals;
+    private ArrayList<String> asianCapitals;
+    private ArrayList<String> americasCapitals;
+    private ArrayList<String> africanCapitals;
+    private ArrayList<String> oceaniaCapitals;
+    private ArrayList<String> allCapitals;
+    private int currentMultipleQuestionsNumber = 0;
+    private String selectedRegion;
+    private ArrayList<String> usedRegionsList;
+    private HashMap<String, ArrayList<String>> regionsMap;
+    private String[] answers;
+    private String[] logUsedCapitals; //contains all potential answers for all questions
+    private boolean[] logCheckedBoxes; //contains status of all checkboxes for all questions
+    private boolean[] logCorrectCheckBoxes; //contains info whether the checkboxes should have been checked for all questions
+    private TextView questionNumberTextView;
+    private TextView questionTextView;
+    private TextView testeeNameTextView;
+    private TextView currentScoreTextView;
+    private Button submitButton;
+    private String testeeName;
+    private String[] providedAnswers;
+    private String[] correctAnswers;
+    private int currentScore;
+    private int maxCurrentScore;
+    private int currentQuestionNumber;
+    private ArrayList<String> usedCountriesList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,45 +84,41 @@ public class QuizMultipleActivity extends AppCompatActivity {
                 //or if it is not checked, but the related capital is in teh selected region, a wrong answer is provided.
                 // Otherwise, the answer is correct.
 
-                for(int i=0; i<checkBoxes.length;i++){
+                for (int i = 0; i < checkBoxes.length; i++) {
 
-                    logUsedCapitals[(currentMultipleQuestionsNumber-1)*NUMBER_OF_ANSWERS+i] = checkBoxes[i].getText().toString();
-                    logCheckedBoxes[(currentMultipleQuestionsNumber-1)*NUMBER_OF_ANSWERS+i] = checkBoxes[i].isChecked();
-                    logCorrectCheckBoxes[(currentMultipleQuestionsNumber-1)*NUMBER_OF_ANSWERS+i] =
+                    logUsedCapitals[(currentMultipleQuestionsNumber - 1) * NUMBER_OF_ANSWERS + i] = checkBoxes[i].getText().toString();
+                    logCheckedBoxes[(currentMultipleQuestionsNumber - 1) * NUMBER_OF_ANSWERS + i] = checkBoxes[i].isChecked();
+                    logCorrectCheckBoxes[(currentMultipleQuestionsNumber - 1) * NUMBER_OF_ANSWERS + i] =
                             selectedRegionList.contains(checkBoxes[i].getText().toString());
 
-                    if((checkBoxes[i].isChecked() & (!selectedRegionList.contains(checkBoxes[i].getText().toString())))||
+                    if ((checkBoxes[i].isChecked() & (!selectedRegionList.contains(checkBoxes[i].getText().toString()))) ||
                             (!checkBoxes[i].isChecked() & selectedRegionList.contains(checkBoxes[i].getText().toString())))
                         isCorrect = false;
                 }
 
-                if (isCorrect){
-                    Toast.makeText(getApplicationContext(),getText(R.string.correct),Toast.LENGTH_SHORT).show();
+                if (isCorrect) {
+                    Toast.makeText(getApplicationContext(), getText(R.string.correct), Toast.LENGTH_SHORT).show();
                     currentScore++;
-                }
-                else
-                    Toast.makeText(getApplicationContext(),getText(R.string.wrong),Toast.LENGTH_SHORT).show();
+                } else
+                    Toast.makeText(getApplicationContext(), getText(R.string.wrong), Toast.LENGTH_SHORT).show();
 
-                currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
+                currentScoreTextView.setText(getString(R.string.current_score, String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
 
 
                 if (currentMultipleQuestionsNumber < NUMBER_MULTIPLE_QUESTIONS)
                     populateQuestion();
                 else {
-                    Log.v("rezultate", "lista capitale: " + Arrays.toString(logUsedCapitals));
-                    Log.v("rezultate", "bifate: " + Arrays.toString(logCheckedBoxes));
-                    Log.v("rezultate", "should be: " + Arrays.toString(logCorrectCheckBoxes));
-
                     Intent startReportActivity = new Intent(QuizMultipleActivity.this, ReportActivity.class);
                     startReportActivity.putExtra("KEY_TESTEE_NAME", testeeName);
                     startReportActivity.putExtra("KEY_TESTEE_SCORE", currentScore);
-                    startReportActivity.putExtra("KEY_MAX_SCORE",maxCurrentScore);
-                    startReportActivity.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
+                    startReportActivity.putExtra("KEY_MAX_SCORE", maxCurrentScore);
+                    startReportActivity.putExtra("KEY_PROVIDED_ANSWERS", providedAnswers);
                     startReportActivity.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
-                    startReportActivity.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
+                    startReportActivity.putStringArrayListExtra("KEY_USED_COUNTRIES", usedCountriesList);
                     startReportActivity.putExtra("KEY_LIST_CAPITALS_MULTIPLE", logUsedCapitals);
                     startReportActivity.putExtra("KEY_CHECKED_BOXES_MULTIPLE", logCheckedBoxes);
                     startReportActivity.putExtra("KEY_CORRECT_CHECKED_BOXES_MULTIPLE", logCorrectCheckBoxes);
+                    startReportActivity.putStringArrayListExtra("USED_REGIONS_LIST", usedRegionsList);
                     startActivity(startReportActivity);
 
                 }
@@ -140,9 +127,11 @@ public class QuizMultipleActivity extends AppCompatActivity {
 
     }
 
-
-    public void setup(){
-        checkBoxes = new CheckBox[] {findViewById(R.id.checkbox1),
+    /**
+     * initialize various variables used throughout the activity
+     */
+    public void setup() {
+        checkBoxes = new CheckBox[]{findViewById(R.id.checkbox1),
                 findViewById(R.id.checkbox2),
                 findViewById(R.id.checkbox3),
                 findViewById(R.id.checkbox4),
@@ -167,10 +156,10 @@ public class QuizMultipleActivity extends AppCompatActivity {
 
         testeeName = getIntent().getStringExtra("KEY_TESTEE_NAME");
         testeeNameTextView = (TextView) findViewById(R.id.name_text_view_quiz_multiple);
-        testeeNameTextView.setText(getString(R.string.player_name,testeeName));
+        testeeNameTextView.setText(getString(R.string.player_name, testeeName));
 
         currentScore = getIntent().getIntExtra("KEY_TESTEE_SCORE", 0);
-        maxCurrentScore = getIntent().getIntExtra("KEY_MAX_SCORE",0);
+        maxCurrentScore = getIntent().getIntExtra("KEY_MAX_SCORE", 0);
         currentScoreTextView = (TextView) findViewById(R.id.current_score_view_quiz_multiple);
 
         providedAnswers = getIntent().getStringArrayExtra("KEY_PROVIDED_ANSWERS");
@@ -187,23 +176,23 @@ public class QuizMultipleActivity extends AppCompatActivity {
 
         answers = new String[NUMBER_OF_ANSWERS];
 
-        logUsedCapitals = new String[NUMBER_OF_ANSWERS*NUMBER_MULTIPLE_QUESTIONS];
-        logCheckedBoxes = new boolean[NUMBER_OF_ANSWERS*NUMBER_MULTIPLE_QUESTIONS];
-        logCorrectCheckBoxes = new boolean[NUMBER_OF_ANSWERS*NUMBER_MULTIPLE_QUESTIONS];
+        logUsedCapitals = new String[NUMBER_OF_ANSWERS * NUMBER_MULTIPLE_QUESTIONS];
+        logCheckedBoxes = new boolean[NUMBER_OF_ANSWERS * NUMBER_MULTIPLE_QUESTIONS];
+        logCorrectCheckBoxes = new boolean[NUMBER_OF_ANSWERS * NUMBER_MULTIPLE_QUESTIONS];
 
         //HashMap mapping from the String region to the appropriate ArrayList
         regionsMap = new HashMap<String, ArrayList<String>>();
-        regionsMap.put(REGIONS[0],europeanCapitals);
-        regionsMap.put(REGIONS[1],asianCapitals);
-        regionsMap.put(REGIONS[2],americasCapitals);
-        regionsMap.put(REGIONS[3],africanCapitals);
-        regionsMap.put(REGIONS[4],oceaniaCapitals);
+        regionsMap.put(REGIONS[0], europeanCapitals);
+        regionsMap.put(REGIONS[1], asianCapitals);
+        regionsMap.put(REGIONS[2], americasCapitals);
+        regionsMap.put(REGIONS[3], africanCapitals);
+        regionsMap.put(REGIONS[4], oceaniaCapitals);
     }
 
 
-    public void populateQuestion(){
+    public void populateQuestion() {
 
-        for (int i=0; i<checkBoxes.length;i++)
+        for (int i = 0; i < checkBoxes.length; i++)
             checkBoxes[i].setChecked(false);
 
         currentQuestionNumber++;
@@ -211,22 +200,22 @@ public class QuizMultipleActivity extends AppCompatActivity {
 
         questionNumberTextView.setText(getString(R.string.question, String.valueOf(currentQuestionNumber)));
 
-        currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
+        currentScoreTextView.setText(getString(R.string.current_score, String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
 
         //select a region not previously used, and then add it to the ArrayList containing used regions
         selectedRegion = selectValue(usedRegionsList, REGIONS);
         usedRegionsList.add(selectedRegion);
 
-        questionTextView.setText(getString(R.string.ask_question_multiple,selectedRegion));
+        questionTextView.setText(getString(R.string.ask_question_multiple, selectedRegion));
 
         //randomly select capitals to be included in the question
         ArrayList<String> usedCapitalsList = new ArrayList<String>();
-        for(int i=0; i<answers.length; i++){
+        for (int i = 0; i < answers.length; i++) {
             answers[i] = selectValue(usedCapitalsList, allCapitals);
             usedCapitalsList.add(answers[i]);
         }
 
-        for (int i=0;i<checkBoxes.length;i++)
+        for (int i = 0; i < checkBoxes.length; i++)
             checkBoxes[i].setText(answers[i]);
 
     }
@@ -235,19 +224,20 @@ public class QuizMultipleActivity extends AppCompatActivity {
     /**
      * Randomly selects a value from valuesArray which is not already in an ArrayList provided
      * as parameter
-     * @param usedValues ArrayList of values already used and which cannot be selected from
-     *                   valuesArray
+     *
+     * @param usedValues  ArrayList of values already used and which cannot be selected from
+     *                    valuesArray
      * @param valuesArray array containing values from among which one shall be randomly selected
      * @return random String element from valuesArray
      */
-    public String selectValue(ArrayList<String> usedValues, String[] valuesArray){
+    public String selectValue(ArrayList<String> usedValues, String[] valuesArray) {
         boolean validValue = false;
         Random rand = new Random();
         String returnValue = "";
 
-        while(!validValue){
+        while (!validValue) {
             int selectedIndex = rand.nextInt(valuesArray.length);
-            if (!usedValues.contains(valuesArray[selectedIndex])){
+            if (!usedValues.contains(valuesArray[selectedIndex])) {
                 validValue = true;
                 returnValue = valuesArray[selectedIndex];
             }
@@ -259,25 +249,27 @@ public class QuizMultipleActivity extends AppCompatActivity {
     /**
      * Randomly selects a value from valuesArray which is not already in an ArrayList provided
      * as parameter
-     * @param usedValues ArrayList of values already used and which cannot be selected from
-     *                   valuesArray
+     *
+     * @param usedValues  ArrayList of values already used and which cannot be selected from
+     *                    valuesArray
      * @param valuesArray ArrayList of values from among which one shall be randomly selected
      * @return random String element from valuesArray
      */
-    public String selectValue(ArrayList<String> usedValues, ArrayList<String> valuesArray){
+    public String selectValue(ArrayList<String> usedValues, ArrayList<String> valuesArray) {
         boolean validValue = false;
         Random rand = new Random();
         String returnValue = "";
 
-        while(!validValue){
+        while (!validValue) {
             int selectedIndex = rand.nextInt(valuesArray.size());
-            if (!usedValues.contains(valuesArray.get(selectedIndex))){
+            if (!usedValues.contains(valuesArray.get(selectedIndex))) {
                 validValue = true;
                 returnValue = valuesArray.get(selectedIndex);
             }
         }
         return returnValue;
     }
+
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
@@ -288,8 +280,8 @@ public class QuizMultipleActivity extends AppCompatActivity {
         answers = savedInstanceState.getStringArray(KEY_ANSWERS);
         currentMultipleQuestionsNumber = savedInstanceState.getInt(KEY_CURRENT_MULTIPLE_QUESTION_NUMBER);
 
-        questionTextView.setText(getString(R.string.ask_question_multiple,selectedRegion));
-        for (int i=0;i<checkBoxes.length;i++)
+        questionTextView.setText(getString(R.string.ask_question_multiple, selectedRegion));
+        for (int i = 0; i < checkBoxes.length; i++)
             checkBoxes[i].setText(answers[i]);
 
         testeeName = savedInstanceState.getString(KEY_TESTEE_NAME);
@@ -303,7 +295,7 @@ public class QuizMultipleActivity extends AppCompatActivity {
 
         currentScore = savedInstanceState.getInt(KEY_CURRENT_SCORE);
         maxCurrentScore = savedInstanceState.getInt(KEY_MAX_CURRENT_SCORE);
-        currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
+        currentScoreTextView.setText(getString(R.string.current_score, String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
 
         logUsedCapitals = savedInstanceState.getStringArray(KEY_LOG_USED_CAPITALS);
         logCheckedBoxes = savedInstanceState.getBooleanArray(KEY_LOG_CHECKED_CHECKBOXES);
@@ -311,14 +303,15 @@ public class QuizMultipleActivity extends AppCompatActivity {
 
     }
 
+
     @Override
-    public void onSaveInstanceState (Bundle savedInstanceState){
+    public void onSaveInstanceState(Bundle savedInstanceState) {
 
         savedInstanceState.putStringArrayList(KEY_USED_REGIONS, usedRegionsList);
         savedInstanceState.putString(KEY_SELECTED_REGION, selectedRegion);
         savedInstanceState.putStringArray(KEY_ANSWERS, answers);
         savedInstanceState.putInt(KEY_CURRENT_MULTIPLE_QUESTION_NUMBER, currentMultipleQuestionsNumber);
-        savedInstanceState.putString(KEY_TESTEE_NAME,testeeName);
+        savedInstanceState.putString(KEY_TESTEE_NAME, testeeName);
         savedInstanceState.putInt(KEY_CURRENT_QUESTION_NUMBER, currentQuestionNumber);
         savedInstanceState.putStringArray(KEY_PROVIDED_ANSWERS, providedAnswers);
         savedInstanceState.putStringArray(KEY_CORRECT_ANSWERS, correctAnswers);

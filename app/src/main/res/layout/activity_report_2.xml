@@ -49,9 +49,8 @@
                 <TextView
                     style="@style/text.result.start"
                     android:gravity="center"
-                    android:id="@+id/text_view_zone1"
-                    android:layout_weight="1"
-                    android:text="Europe"/>
+                    android:id="@+id/text_view_region_0"
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -85,7 +84,7 @@
                 <TextView
                     android:id="@+id/text_view_capital_0"
                     style="@style/text.result.start"
-                    android:text="Bucharest"
+
                     android:layout_weight="2.2" />
 
                 <CheckBox
@@ -109,7 +108,6 @@
                 <TextView
                     android:id="@+id/text_view_capital_1"
                     style="@style/text.result.start"
-                    android:text="Sofia"
                     android:layout_weight="2.2" />
 
                 <CheckBox
@@ -133,7 +131,6 @@
                 <TextView
                     android:id="@+id/text_view_capital_2"
                     style="@style/text.result.start"
-                    android:text="Sofia"
                     android:layout_weight="2.2" />
 
                 <CheckBox
@@ -157,7 +154,6 @@
                 <TextView
                     android:id="@+id/text_view_capital_3"
                     style="@style/text.result.start"
-                    android:text="Sofia"
                     android:layout_weight="2.2" />
 
                 <CheckBox
@@ -181,7 +177,6 @@
                 <TextView
                     android:id="@+id/text_view_capital_4"
                     style="@style/text.result.start"
-                    android:text="Sofia"
                     android:layout_weight="2.2" />
 
                 <CheckBox
@@ -205,7 +200,6 @@
                 <TextView
                     android:id="@+id/text_view_capital_5"
                     style="@style/text.result.start"
-                    android:text="Sofia"
                     android:layout_weight="2.2" />
 
                 <CheckBox
@@ -229,10 +223,9 @@
 
                 <TextView
                     style="@style/text.result.start"
-                    android:id="@+id/text_view_zone2"
+                    android:id="@+id/text_view_region_1"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Europe"/>
+                    android:gravity="center" />
 
             </LinearLayout>
 
@@ -265,7 +258,6 @@
                 <TextView
                     android:id="@+id/text_view_capital_6"
                     style="@style/text.result.start"
-                    android:text="Sofia"
                     android:layout_weight="2.2" />
 
                 <CheckBox
@@ -291,7 +283,6 @@
                 <TextView
                     android:id="@+id/text_view_capital_7"
                     style="@style/text.result.start"
-                    android:text="Sofia"
                     android:layout_weight="2.2" />
 
                 <CheckBox
@@ -315,7 +306,6 @@
                 <TextView
                     android:id="@+id/text_view_capital_8"
                     style="@style/text.result.start"
-                    android:text="Sofia"
                     android:layout_weight="2.2" />
 
                 <CheckBox
@@ -338,7 +328,6 @@
                 <TextView
                     android:id="@+id/text_view_capital_9"
                     style="@style/text.result.start"
-                    android:text="Sofia"
                     android:layout_weight="2.2" />
 
                 <CheckBox
@@ -362,7 +351,6 @@
             <TextView
                 android:id="@+id/text_view_capital_10"
                 style="@style/text.result.start"
-                android:text="Sofia"
                 android:layout_weight="2.2" />
 
             <CheckBox
@@ -386,7 +374,6 @@
                 <TextView
                     android:id="@+id/text_view_capital_11"
                     style="@style/text.result.start"
-                    android:text="Sofia"
                     android:layout_weight="2.2" />
 
                 <CheckBox
@@ -398,6 +385,17 @@
                     android:id="@+id/checkbox_correct_11"
                     style="@style/text.checkbox.report"
                     android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button_next"
+                    style="@style/button.result"
+                    android:onClick="back"/>
 
             </LinearLayout>
 
