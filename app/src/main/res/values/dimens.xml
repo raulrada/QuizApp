@@ -30,6 +30,12 @@
     <dimen name="resultTextResultMarginBottom">10dp</dimen>
     <dimen name="resultTextResultTextSize">17sp</dimen>
 
+    <dimen name="result2TextResultMarginStart">5dp</dimen>
+    <dimen name="result2TextResultMarginEnd">5dp</dimen>
+    <dimen name="result2TextResultMarginTop">10dp</dimen>
+    <dimen name="result2TextResultMarginBottom">10dp</dimen>
+    <dimen name="result2TextResultTextSize">17sp</dimen>
+
     <dimen name="editTextMarginStart">20dp</dimen>
     <dimen name="editTextMarginEnd">20dp</dimen>
     <dimen name="editTextMarginTop">0dp</dimen>
@@ -64,6 +70,14 @@
     <dimen name="checkBoxQuizMarginBottom">0dp</dimen>
     <dimen name="checkBoxQuizTextPaddingLeft">5dp</dimen>
     <dimen name="checkBoxQuizTextSize">17sp</dimen>
+
+    <dimen name="checkBoxReportMarginStart">5dp</dimen>
+    <dimen name="checkBoxReportMarginEnd">5dp</dimen>
+    <dimen name="checkBoxReportMarginTop">0dp</dimen>
+    <dimen name="checkBoxReportMarginBottom">0dp</dimen>
+    <dimen name="checkBoxReportTextPaddingLeft">0dp</dimen>
+    <dimen name="checkBoxReportTextSize">17sp</dimen>
+    <dimen name="checkBoxReportScale">0.8</dimen>
 
     <dimen name="checkboxWelcomeTextPaddingLeft">0dp</dimen>
 

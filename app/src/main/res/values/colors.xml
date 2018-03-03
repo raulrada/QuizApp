@@ -15,8 +15,8 @@
     <color name="buttonDisabledTextColor">#FF424242</color>
 
     <color name="radioButtonQuizTextColor">#FF424242</color>
-    <color name="reqularQuizTextColor">#FF424242</color>
-    <color name="reqularResultTextColor">#FF424242</color>
+    <color name="regularQuizTextColor">#FF424242</color>
+    <color name="regularResultTextColor">#FF424242</color>
     <color name="summaryResultTextColor">#FF424242</color>
 
     <color name="correctAnswerColor">#17601c</color>

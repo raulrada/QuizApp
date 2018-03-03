@@ -69,7 +69,7 @@ public class ReportActivity extends AppCompatActivity{
         nameReportTextView.setText(getString(R.string.player_name_results,testeeName));
         nameResultsTextView.setText(getString(R.string.player_name_score,testeeName));
 
-        questionTextView = (TextView) findViewById(R.id.question_text_view_results);
+        //questionTextView = (TextView) findViewById(R.id.question_text_view_results);
 
         currentScore = getIntent().getIntExtra("KEY_TESTEE_SCORE", 0);
 
@@ -120,6 +120,12 @@ public class ReportActivity extends AppCompatActivity{
      * Restart the quiz for the current player
      * @param view
      */
+
+    public void next(View view){
+        Intent nextReport = new Intent(this, ReportActivity2.class);
+        startActivity(nextReport);
+    }
+
     public void restart(View view){
         Intent startQuizIntent = new Intent (this, QuizActivity.class);
         startQuizIntent.putExtra("KEY_TESTEE_NAME", testeeName);

@@ -294,6 +294,17 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button_next"
+                    style="@style/button.result"
+                    android:onClick="next"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </ScrollView>
