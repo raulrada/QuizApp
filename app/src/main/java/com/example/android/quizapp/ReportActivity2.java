@@ -114,6 +114,12 @@ public class ReportActivity2 extends AppCompatActivity {
 
     }
 
+
+    /**
+     * move to previous part of the report
+     *
+     * @param view
+     */
     public void back(View view) {
         Intent startPreviousReport = new Intent(this, ReportActivity.class);
         startPreviousReport.putExtra("KEY_TESTEE_NAME", testeeName);

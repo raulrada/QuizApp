@@ -25,33 +25,7 @@ import java.util.Random;
 
 public class QuizOpenActivity extends AppCompatActivity {
 
-    private String testeeName;
-    private String[] providedAnswers;
-    private String[] correctAnswers;
-    private String[] countries;
-
-    private ArrayList<String> usedCountriesList;
-    private HashMap<String, String> countriesCapitals;
-
-    private int currentScore;
-    private int maxCurrentScore;
-    private boolean isSubmitEnabled;
-    private int currentQuestionNumber;
-    private int currentOpenQuestionsNumber = 0;
-
-    private String selectedCountry;
-    private String selectedAnswer;
-    private String correctAnswer;
-
-    private TextView questionNumberTextView;
-    private TextView questionTextView;
-    private TextView testeeNameTextView;
-    private TextView currentScoreTextView;
-    private EditText answerEditText;
-    private Button submitButton;
-
     private static final int NUMBER_OPEN_QUESTIONS = 2;
-
     private static final String KEY_TESTEE_NAME = "TesteeName";
     private static final String KEY_CURRENT_QUESTION_NUMBER = "currentQuestionNumber";
     private static final String KEY_CURRENT_OPEN_QUESTION_NUMBER = "currentOpenQuestionNumber";
@@ -63,7 +37,82 @@ public class QuizOpenActivity extends AppCompatActivity {
     private static final String KEY_SUBMIT_ENABLED = "submitEnabled";
     private static final String KEY_CURRENT_SCORE = "currentScore";
     private static final String KEY_MAX_CURRENT_SCORE = "maxCurrentScore";
+    private String testeeName;
+    private String[] providedAnswers;
+    private String[] correctAnswers;
+    private String[] countries;
+    private ArrayList<String> usedCountriesList;
+    private HashMap<String, String> countriesCapitals;
+    private int currentScore;
+    private int maxCurrentScore;
+    private boolean isSubmitEnabled;
+    private int currentQuestionNumber;
+    private int currentOpenQuestionsNumber = 0;
+    private String selectedCountry;
+    private String selectedAnswer;
+    private String correctAnswer;
+    private TextView questionNumberTextView;
+    private TextView questionTextView;
+    private TextView testeeNameTextView;
+    private TextView currentScoreTextView;
+    private EditText answerEditText;
+    private Button submitButton;
 
+    /**
+     * Method used to populate a HashMap from a res/xml file
+     * source code from: https://gist.github.com/codebycliff/11198553
+     *
+     * @param c
+     * @param hashMapResId id of the xml file containing the map
+     * @return populated HashMap
+     */
+    public static HashMap<String, String> getHashMapResource(Context c, int hashMapResId) {
+        HashMap<String, String> map = null;
+        XmlResourceParser parser = c.getResources().getXml(hashMapResId);
+
+        String key = null, value = null;
+
+        try {
+            int eventType = parser.getEventType();
+
+            while (eventType != XmlPullParser.END_DOCUMENT) {
+                if (eventType == XmlPullParser.START_DOCUMENT) {
+                    Log.d("utils", "Start document");
+                } else if (eventType == XmlPullParser.START_TAG) {
+                    if (parser.getName().equals("map")) {
+                        boolean isLinked = parser.getAttributeBooleanValue(null, "linked", false);
+
+                        map = isLinked
+                                ? new LinkedHashMap<String, String>()
+                                : new HashMap<String, String>();
+                    } else if (parser.getName().equals("entry")) {
+                        key = parser.getAttributeValue(null, "key");
+
+                        if (null == key) {
+                            parser.close();
+                            return null;
+                        }
+                    }
+                } else if (eventType == XmlPullParser.END_TAG) {
+                    if (parser.getName().equals("entry")) {
+                        map.put(key, value);
+                        key = null;
+                        value = null;
+                    }
+                } else if (eventType == XmlPullParser.TEXT) {
+                    if (null != key) {
+                        value = parser.getText();
+                    }
+                }
+                eventType = parser.next();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return map;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,10 +121,10 @@ public class QuizOpenActivity extends AppCompatActivity {
 
         testeeName = getIntent().getStringExtra("KEY_TESTEE_NAME");
         testeeNameTextView = (TextView) findViewById(R.id.name_text_view_quiz_open);
-        testeeNameTextView.setText(getString(R.string.player_name,testeeName));
+        testeeNameTextView.setText(getString(R.string.player_name, testeeName));
 
         currentScore = getIntent().getIntExtra("KEY_TESTEE_SCORE", 0);
-        maxCurrentScore = getIntent().getIntExtra("KEY_MAX_SCORE",0);
+        maxCurrentScore = getIntent().getIntExtra("KEY_MAX_SCORE", 0);
         currentScoreTextView = (TextView) findViewById(R.id.current_score_view_quiz_open);
         currentQuestionNumber = maxCurrentScore;
 
@@ -115,11 +164,10 @@ public class QuizOpenActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 selectedAnswer = answerEditText.getText().toString();
-                if (!TextUtils.isEmpty(selectedAnswer)){
+                if (!TextUtils.isEmpty(selectedAnswer)) {
                     submitButton.setEnabled(true);
                     isSubmitEnabled = true;
-                }
-                else {
+                } else {
                     submitButton.setEnabled(false);
                     isSubmitEnabled = false;
                 }
@@ -131,23 +179,23 @@ public class QuizOpenActivity extends AppCompatActivity {
             }
         });
 
-        submitButton.setOnClickListener(new View.OnClickListener(){
+        submitButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick (View view){
+            public void onClick(View view) {
 
                 providedAnswers[currentQuestionNumber - 1] = selectedAnswer;
                 correctAnswers[currentQuestionNumber - 1] = correctAnswer;
 
                 maxCurrentScore += 1;
 
-                if (correctAnswer.equalsIgnoreCase(selectedAnswer)){
-                    Toast.makeText(getApplicationContext(),getText(R.string.correct),Toast.LENGTH_SHORT).show();
-                    currentScore += 1;}
-                else
-                    Toast.makeText(getApplicationContext(),getText(R.string.wrong),Toast.LENGTH_SHORT).show();
+                if (correctAnswer.equalsIgnoreCase(selectedAnswer)) {
+                    Toast.makeText(getApplicationContext(), getText(R.string.correct), Toast.LENGTH_SHORT).show();
+                    currentScore += 1;
+                } else
+                    Toast.makeText(getApplicationContext(), getText(R.string.wrong), Toast.LENGTH_SHORT).show();
 
-                currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
+                currentScoreTextView.setText(getString(R.string.current_score, String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
 
                 if (currentOpenQuestionsNumber < NUMBER_OPEN_QUESTIONS)
                     populateQuestion();
@@ -155,10 +203,10 @@ public class QuizOpenActivity extends AppCompatActivity {
                     Intent startQuizMultipleActivity = new Intent(QuizOpenActivity.this, QuizMultipleActivity.class);
                     startQuizMultipleActivity.putExtra("KEY_TESTEE_NAME", testeeName);
                     startQuizMultipleActivity.putExtra("KEY_TESTEE_SCORE", currentScore);
-                    startQuizMultipleActivity.putExtra("KEY_MAX_SCORE",maxCurrentScore);
-                    startQuizMultipleActivity.putExtra("KEY_PROVIDED_ANSWERS",providedAnswers);
+                    startQuizMultipleActivity.putExtra("KEY_MAX_SCORE", maxCurrentScore);
+                    startQuizMultipleActivity.putExtra("KEY_PROVIDED_ANSWERS", providedAnswers);
                     startQuizMultipleActivity.putExtra("KEY_CORRECT_ANSWERS", correctAnswers);
-                    startQuizMultipleActivity.putStringArrayListExtra("KEY_USED_COUNTRIES",usedCountriesList);
+                    startQuizMultipleActivity.putStringArrayListExtra("KEY_USED_COUNTRIES", usedCountriesList);
                     startActivity(startQuizMultipleActivity);
                 }
 
@@ -169,9 +217,9 @@ public class QuizOpenActivity extends AppCompatActivity {
     }
 
     /**
-     *Populates layout with a country capital question
+     * Ask a question to the player and provide potential answers
      */
-    public void populateQuestion(){
+    public void populateQuestion() {
 
         submitButton.setEnabled(false); //disable Submit button until an answer is selected
         isSubmitEnabled = false;
@@ -181,13 +229,13 @@ public class QuizOpenActivity extends AppCompatActivity {
         currentOpenQuestionsNumber += 1;
         questionNumberTextView.setText(getString(R.string.question, String.valueOf(currentQuestionNumber)));
 
-        currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
+        currentScoreTextView.setText(getString(R.string.current_score, String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
 
         //select a country name not already used, and then add it to the ArrayList with used country names;
         selectedCountry = selectValue(usedCountriesList, countries);
         usedCountriesList.add(selectedCountry);
 
-        questionTextView.setText(getString(R.string.ask_question,selectedCountry));
+        questionTextView.setText(getString(R.string.ask_question, selectedCountry));
 
         //store the correct answer to the question
         correctAnswer = countriesCapitals.get(selectedCountry);
@@ -197,19 +245,20 @@ public class QuizOpenActivity extends AppCompatActivity {
     /**
      * Randomly selects a value from valuesArray which is not already in an ArrayList provided
      * as parameter
-     * @param usedValues ArrayList of values already used and which cannot be selected from
-     *                   valuesArray
+     *
+     * @param usedValues  ArrayList of values already used and which cannot be selected from
+     *                    valuesArray
      * @param valuesArray array containing values from among which one shall be randomly selected
      * @return random String element from valuesArray
      */
-    public String selectValue(ArrayList<String> usedValues, String[] valuesArray){
+    public String selectValue(ArrayList<String> usedValues, String[] valuesArray) {
         boolean validValue = false;
         Random rand = new Random();
         String returnValue = "";
 
-        while(!validValue){
+        while (!validValue) {
             int selectedIndex = rand.nextInt(valuesArray.length);
-            if (!usedValues.contains(valuesArray[selectedIndex])){
+            if (!usedValues.contains(valuesArray[selectedIndex])) {
                 validValue = true;
                 returnValue = valuesArray[selectedIndex];
             }
@@ -231,7 +280,7 @@ public class QuizOpenActivity extends AppCompatActivity {
         usedCountriesList = savedInstanceState.getStringArrayList(KEY_USED_COUNTRIES);
 
         selectedCountry = savedInstanceState.getString(KEY_SELECTED_COUNTRY);
-        questionTextView.setText(getString(R.string.ask_question,selectedCountry));
+        questionTextView.setText(getString(R.string.ask_question, selectedCountry));
 
         correctAnswer = savedInstanceState.getString(KEY_CORRECT_ANSWER);
 
@@ -249,13 +298,13 @@ public class QuizOpenActivity extends AppCompatActivity {
         currentScore = savedInstanceState.getInt(KEY_CURRENT_SCORE);
         maxCurrentScore = savedInstanceState.getInt(KEY_MAX_CURRENT_SCORE);
 
-        currentScoreTextView.setText(getString(R.string.current_score,String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
+        currentScoreTextView.setText(getString(R.string.current_score, String.valueOf(currentScore), String.valueOf(maxCurrentScore)));
     }
 
     @Override
-    public void onSaveInstanceState(Bundle savedInstanceState){
+    public void onSaveInstanceState(Bundle savedInstanceState) {
 
-        savedInstanceState.putString(KEY_TESTEE_NAME,testeeName);
+        savedInstanceState.putString(KEY_TESTEE_NAME, testeeName);
         savedInstanceState.putInt(KEY_CURRENT_QUESTION_NUMBER, currentQuestionNumber);
         savedInstanceState.putInt(KEY_CURRENT_OPEN_QUESTION_NUMBER, currentOpenQuestionsNumber);
         savedInstanceState.putStringArrayList(KEY_USED_COUNTRIES, usedCountriesList);
@@ -270,74 +319,12 @@ public class QuizOpenActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
     }
 
-
     /**
-     * Method used to populate a HashMap from a res/xml file
-     * source code from: https://gist.github.com/codebycliff/11198553
-     * @param c
-     * @param hashMapResId id of the xml file containing the map
-     * @return populated HashMap
-     */
-    public static HashMap<String, String> getHashMapResource(Context c, int hashMapResId) {
-        HashMap<String, String> map = null;
-        XmlResourceParser parser = c.getResources().getXml(hashMapResId);
-
-        String key = null, value = null;
-
-        try {
-            int eventType = parser.getEventType();
-
-            while (eventType != XmlPullParser.END_DOCUMENT) {
-                if (eventType == XmlPullParser.START_DOCUMENT) {
-                    Log.d("utils", "Start document");
-                }
-                else if (eventType == XmlPullParser.START_TAG) {
-                    if (parser.getName().equals("map")) {
-                        boolean isLinked = parser.getAttributeBooleanValue(null, "linked", false);
-
-                        map = isLinked
-                                ? new LinkedHashMap<String, String>()
-                                : new HashMap<String, String>();
-                    }
-                    else if (parser.getName().equals("entry")) {
-                        key = parser.getAttributeValue(null, "key");
-
-                        if (null == key) {
-                            parser.close();
-                            return null;
-                        }
-                    }
-                }
-                else if (eventType == XmlPullParser.END_TAG) {
-                    if (parser.getName().equals("entry")) {
-                        map.put(key, value);
-                        key = null;
-                        value = null;
-                    }
-                }
-                else if (eventType == XmlPullParser.TEXT) {
-                    if (null != key) {
-                        value = parser.getText();
-                    }
-                }
-                eventType = parser.next();
-            }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-
-        return map;
-    }
-
-
-    /**
-     *Disable functionality of back button, to prevent the user from going back to previous
+     * Disable functionality of back button, to prevent the user from going back to previous
      * screens during test
      */
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
 
     }
 

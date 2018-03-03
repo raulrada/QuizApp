@@ -300,9 +300,9 @@
 
                 <ImageView
                     style="@style/navigationImage"
-                    android:src="@drawable/pic_next"
                     android:layout_alignParentEnd="true"
-                    android:onClick="next"/>
+                    android:onClick="next"
+                    android:src="@drawable/pic_next" />
 
             </RelativeLayout>
 

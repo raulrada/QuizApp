@@ -50,28 +50,28 @@
                 android:orientation="vertical">
 
                 <CheckBox
-                    style="@style/text.checkbox.quiz"
-                    android:id="@+id/checkbox1"/>
+                    android:id="@+id/checkbox1"
+                    style="@style/text.checkbox.quiz" />
 
                 <CheckBox
-                    style="@style/text.checkbox.quiz"
-                    android:id="@+id/checkbox2"/>
+                    android:id="@+id/checkbox2"
+                    style="@style/text.checkbox.quiz" />
 
                 <CheckBox
-                    style="@style/text.checkbox.quiz"
-                    android:id="@+id/checkbox3"/>
+                    android:id="@+id/checkbox3"
+                    style="@style/text.checkbox.quiz" />
 
                 <CheckBox
-                    style="@style/text.checkbox.quiz"
-                    android:id="@+id/checkbox4"/>
+                    android:id="@+id/checkbox4"
+                    style="@style/text.checkbox.quiz" />
 
                 <CheckBox
-                    style="@style/text.checkbox.quiz"
-                    android:id="@+id/checkbox5"/>
+                    android:id="@+id/checkbox5"
+                    style="@style/text.checkbox.quiz" />
 
                 <CheckBox
-                    style="@style/text.checkbox.quiz"
-                    android:id="@+id/checkbox6"/>
+                    android:id="@+id/checkbox6"
+                    style="@style/text.checkbox.quiz" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"

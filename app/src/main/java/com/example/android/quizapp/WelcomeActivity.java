@@ -17,20 +17,15 @@ import android.widget.RadioGroup;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    private String testeeName;
-    private boolean isCheckboxChecked = false;
-    private boolean isNameIntroduced = false;
-
-    private EditText nameEditText;
-    private Button startQuizButton;
-    private CheckBox agreeCheckBox;
-
-
     private static final String KEY_TESTEE_NAME = "TesteeName";
     private static final String KEY_CHECKBOX = "checkbox";
     private static final String KEY_NAME_INTRODUCED = "nameIntroduced";
-
-
+    private String testeeName;
+    private boolean isCheckboxChecked = false;
+    private boolean isNameIntroduced = false;
+    private EditText nameEditText;
+    private Button startQuizButton;
+    private CheckBox agreeCheckBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,15 +57,15 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 testeeName = nameEditText.getText().toString();
-                if (!TextUtils.isEmpty(testeeName))
-                    {isNameIntroduced = true;}
-                else
-                    {isNameIntroduced = false;}
+                if (!TextUtils.isEmpty(testeeName)) {
+                    isNameIntroduced = true;
+                } else {
+                    isNameIntroduced = false;
+                }
 
                 if (isNameIntroduced && isCheckboxChecked) {
                     startQuizButton.setEnabled(true);
-                }
-                else{
+                } else {
                     startQuizButton.setEnabled(false);
                 }
             }
@@ -89,14 +84,16 @@ public class WelcomeActivity extends AppCompatActivity {
         agreeCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
-                    {isCheckboxChecked = true;}
-                else
-                    {isCheckboxChecked = false;}
-                if (isNameIntroduced && isCheckboxChecked)
-                    {startQuizButton.setEnabled(true);}
-                else
-                    {startQuizButton.setEnabled(false);}
+                if (isChecked) {
+                    isCheckboxChecked = true;
+                } else {
+                    isCheckboxChecked = false;
+                }
+                if (isNameIntroduced && isCheckboxChecked) {
+                    startQuizButton.setEnabled(true);
+                } else {
+                    startQuizButton.setEnabled(false);
+                }
             }
         });
 
@@ -115,15 +112,14 @@ public class WelcomeActivity extends AppCompatActivity {
         //maintain the enabled / disabled status of the Start Quiz button
         if (isNameIntroduced && isCheckboxChecked) {
             startQuizButton.setEnabled(true);
-        }
-        else{
+        } else {
             startQuizButton.setEnabled(false);
         }
     }
 
     @Override
-    public void onSaveInstanceState(Bundle savedInstanceState){
-        savedInstanceState.putString(KEY_TESTEE_NAME,testeeName);
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putString(KEY_TESTEE_NAME, testeeName);
         savedInstanceState.putBoolean(KEY_NAME_INTRODUCED, isNameIntroduced);
         savedInstanceState.putBoolean(KEY_CHECKBOX, isCheckboxChecked);
 
@@ -131,16 +127,23 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
 
-    public void displayEditText(String toDisplay, EditText et){
+    /**
+     * display text in EditText
+     *
+     * @param toDisplay text to be displayed in EditText
+     * @param et        EditText in which toDisplay shall be displayed
+     */
+    public void displayEditText(String toDisplay, EditText et) {
         et.setText(toDisplay);
     }
 
     /**
      * Launches the quiz
+     *
      * @param view
      */
-    public void startQuiz(View view){
-        Intent startQuizIntent = new Intent (this, QuizActivity.class);
+    public void startQuiz(View view) {
+        Intent startQuizIntent = new Intent(this, QuizActivity.class);
         startQuizIntent.putExtra("KEY_TESTEE_NAME", testeeName);
         startActivity(startQuizIntent);
     }
