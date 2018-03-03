@@ -294,16 +294,17 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/button_next"
-                    style="@style/button.result"
+                <ImageView
+                    style="@style/navigationImage"
+                    android:src="@drawable/pic_next"
+                    android:layout_alignParentEnd="true"
                     android:onClick="next"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
 

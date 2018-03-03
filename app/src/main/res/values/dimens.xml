@@ -87,7 +87,6 @@
     <dimen name="lineMarginBottom">0dp</dimen>
     <dimen name="lineThickness">2dp</dimen>
 
-
     <dimen name="elevationPic">20dp</dimen>
     <dimen name="elevation">10dp</dimen>
     <dimen name="noHeight">0dp</dimen>
@@ -95,5 +94,10 @@
 
     <dimen name="width_results_buttons">100dp</dimen>
 
-
+    <dimen name="resultNavigationImageWidth">50dp</dimen>
+    <dimen name="resultNavigationImageHeight">50dp</dimen>
+    <dimen name="resultNavigationImageMarginStart">20dp</dimen>
+    <dimen name="resultNavigationImageMarginEnd">20dp</dimen>
+    <dimen name="resultNavigationImageMarginTop">0dp</dimen>
+    <dimen name="resultNavigationImageMarginBottom">0dp</dimen>
 </resources>

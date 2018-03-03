@@ -219,4 +219,13 @@
         <item name="android:background">@color/lineColor</item>
     </style>
 
+    <style name="navigationImage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/resultNavigationImageMarginStart</item>
+        <item name="android:layout_marginEnd">@dimen/resultNavigationImageMarginEnd</item>
+        <item name="android:layout_marginTop">@dimen/resultNavigationImageMarginTop</item>
+        <item name="android:layout_marginBottom">@dimen/resultNavigationImageMarginBottom</item>
+    </style>
+
 </resources>
