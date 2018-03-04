@@ -50,6 +50,7 @@
                 android:text="@string/correct_answer" />
 
         </LinearLayout>
+
     </FrameLayout>
 
     <View style="@style/line" />
@@ -60,7 +61,6 @@
         android:layout_weight="1"
         android:background="@color/welcome_background_color_lighter"
         android:fillViewport="true">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -159,7 +159,6 @@
 
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -205,7 +204,6 @@
                     android:layout_weight="1" />
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -265,9 +263,7 @@
 
             </RelativeLayout>
 
-
         </LinearLayout>
-
 
     </ScrollView>
 

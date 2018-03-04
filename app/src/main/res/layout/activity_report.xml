@@ -49,6 +49,7 @@
                 android:text="@string/correct_answer" />
 
         </LinearLayout>
+
     </FrameLayout>
 
     <View style="@style/line" />
