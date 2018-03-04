@@ -39,8 +39,8 @@ public class QuizActivity extends AppCompatActivity {
     private static final String KEY_SUBMIT_ENABLED = "submitEnabled";
     private static final String KEY_CURRENT_SCORE = "currentScore";
     private static final String KEY_MAX_CURRENT_SCORE = "maxCurrentScore";
-    private static final int NUMBER_OF_QUESTIONS = 10;
-    private static final int NUMBER_OF_QUESTIONS_MULTIPLE_CHOICE = 8;
+    private static final int NUMBER_OF_QUESTIONS = 8;
+    private static final int NUMBER_OF_QUESTIONS_MULTIPLE_CHOICE = 6;
     private static final int NUMBER_OF_ANSWERS = 4;
     private TextView testeeNameTextView;
     private TextView questionTextView;

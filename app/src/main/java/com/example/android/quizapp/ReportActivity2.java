@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class ReportActivity2 extends AppCompatActivity {
 
-    private static final int MIN_SCORE_CONGRATULATIONS = 10;
+    private static final int MIN_SCORE_CONGRATULATIONS = 9;
     private String testeeName;
     private String[] providedAnswers;
     private String[] correctAnswers;

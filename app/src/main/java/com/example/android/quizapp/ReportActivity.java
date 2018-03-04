@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class ReportActivity extends AppCompatActivity {
 
-    private static final int MIN_SCORE_CONGRATULATIONS = 10;
+    private static final int MIN_SCORE_CONGRATULATIONS = 9;
     private String testeeName;
     private String[] providedAnswers;
     private String[] correctAnswers;
@@ -83,18 +83,15 @@ public class ReportActivity extends AppCompatActivity {
 
         countriesTextViews = new TextView[]{findViewById(R.id.text_view_country_0), findViewById(R.id.text_view_country_1),
                 findViewById(R.id.text_view_country_2), findViewById(R.id.text_view_country_3), findViewById(R.id.text_view_country_4),
-                findViewById(R.id.text_view_country_5), findViewById(R.id.text_view_country_6), findViewById(R.id.text_view_country_7),
-                findViewById(R.id.text_view_country_8), findViewById(R.id.text_view_country_9)};
+                findViewById(R.id.text_view_country_5), findViewById(R.id.text_view_country_6), findViewById(R.id.text_view_country_7)};
 
         answersTextViews = new TextView[]{findViewById(R.id.text_view_answer_0), findViewById(R.id.text_view_answer_1),
                 findViewById(R.id.text_view_answer_2), findViewById(R.id.text_view_answer_3), findViewById(R.id.text_view_answer_4),
-                findViewById(R.id.text_view_answer_5), findViewById(R.id.text_view_answer_6), findViewById(R.id.text_view_answer_7),
-                findViewById(R.id.text_view_answer_8), findViewById(R.id.text_view_answer_9)};
+                findViewById(R.id.text_view_answer_5), findViewById(R.id.text_view_answer_6), findViewById(R.id.text_view_answer_7)};
 
         correctAnswersTextViews = new TextView[]{findViewById(R.id.text_view_correct_answer_0), findViewById(R.id.text_view_correct_answer_1),
                 findViewById(R.id.text_view_correct_answer_2), findViewById(R.id.text_view_correct_answer_3), findViewById(R.id.text_view_correct_answer_4),
-                findViewById(R.id.text_view_correct_answer_5), findViewById(R.id.text_view_correct_answer_6), findViewById(R.id.text_view_correct_answer_7),
-                findViewById(R.id.text_view_correct_answer_8), findViewById(R.id.text_view_correct_answer_9)};
+                findViewById(R.id.text_view_correct_answer_5), findViewById(R.id.text_view_correct_answer_6), findViewById(R.id.text_view_correct_answer_7)};
 
         for (int i = 0; i < countriesTextViews.length; i++) {
             countriesTextViews[i].setText(usedCountriesList.get(i));
