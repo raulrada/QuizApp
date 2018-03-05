@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 import org.xmlpull.v1.XmlPullParser;
@@ -156,6 +157,14 @@ public class ReportActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
+    }
+
+    /**
+     * show player's final score in Toast
+     * @param view
+     */
+    public void grade(View view){
+        Toast.makeText(getApplicationContext(), getString(R.string.player_result_toast, testeeName, currentScore, maxScorePossible), Toast.LENGTH_SHORT).show();
     }
 
     /**

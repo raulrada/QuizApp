@@ -21,6 +21,7 @@
     <string name="player_name">Player: <xliff:g example="Paul" id="testeeName">%s</xliff:g></string>
 
     <string name="player_name_results"><xliff:g example="Paul" id="testeeName">%s</xliff:g>\'s results:</string>
+    <string name="player_result_toast"><xliff:g example="Paul" id="testeeName">%1$s</xliff:g>\'s final score: <xliff:g example="7" id="currentScore">%2$d</xliff:g> / <xliff:g example="10" id="maxCurrentScore">%3$d</xliff:g></string>
     <string name="player_name_score"><xliff:g example="Paul" id="testeeName">%s</xliff:g>\'s final report:</string>
     <string name="player_result_share_subject"><xliff:g example="Paul" id="testeeName">%s</xliff:g>\'s result at Capitals Quiz</string>
     <string name="final_score"><xliff:g example="7" id="currentScore">%1$d</xliff:g> / <xliff:g example="10" id="maxCurrentScore">%2$d</xliff:g></string>
@@ -36,6 +37,7 @@
     <string name="correct_answer">Correct\nAnswer:</string>
 
     <string name="restart">Restart</string>
+    <string name="grade">Grade</string>
     <string name="share_result">Share Result</string>
 
     <string name="player">Player:</string>

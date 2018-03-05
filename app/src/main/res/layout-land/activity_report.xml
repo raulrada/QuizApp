@@ -308,6 +308,13 @@
                 android:text="@string/restart" />
 
             <Button
+                android:id="@+id/grade_button"
+                style="@style/Widget.QuizApp.Button.result"
+                android:layout_centerHorizontal="true"
+                android:onClick="grade"
+                android:text="@string/grade" />
+
+            <Button
                 android:id="@+id/share_button"
                 style="@style/Widget.QuizApp.Button.result"
                 android:layout_alignParentEnd="true"
