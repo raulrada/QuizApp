@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
 public class ReportActivity extends AppCompatActivity {
 
     private static final int MIN_SCORE_CONGRATULATIONS = 9;
@@ -102,9 +101,7 @@ public class ReportActivity extends AppCompatActivity {
             else
                 answersTextViews[i].setTextColor(wrongColor);
         }
-
     }
-
 
     /**
      * move to next part of the report
@@ -125,7 +122,6 @@ public class ReportActivity extends AppCompatActivity {
         startNextReport.putStringArrayListExtra("USED_REGIONS_LIST", usedRegionsList);
         startActivity(startNextReport);
     }
-
 
     /**
      * Restart the quiz for the current player
@@ -168,9 +164,9 @@ public class ReportActivity extends AppCompatActivity {
      */
     @Override
     public void onBackPressed() {
-
+        Log.v("onBackPressed", "Phone back button disabled on purpose, to prevent user from" +
+                " going back to previous questions / screens.");
     }
-
 }
 
 

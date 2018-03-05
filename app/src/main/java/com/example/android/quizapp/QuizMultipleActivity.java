@@ -3,6 +3,7 @@ package com.example.android.quizapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -70,6 +71,10 @@ public class QuizMultipleActivity extends AppCompatActivity {
         if (savedInstanceState == null) populateQuestion();
 
         submitButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * listener for player's click action of the Submit button
+             * @param v
+             */
             @Override
             public void onClick(View v) {
 
@@ -123,7 +128,6 @@ public class QuizMultipleActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     /**
@@ -188,7 +192,6 @@ public class QuizMultipleActivity extends AppCompatActivity {
         regionsMap.put(REGIONS[4], oceaniaCapitals);
     }
 
-
     /**
      * ask a question to the player, and provide potential answers
      */
@@ -219,9 +222,7 @@ public class QuizMultipleActivity extends AppCompatActivity {
 
         for (int i = 0; i < checkBoxes.length; i++)
             checkBoxes[i].setText(answers[i]);
-
     }
-
 
     /**
      * Randomly selects a value from valuesArray which is not already in an ArrayList provided
@@ -247,7 +248,6 @@ public class QuizMultipleActivity extends AppCompatActivity {
         return returnValue;
     }
 
-
     /**
      * Randomly selects a value from valuesArray which is not already in an ArrayList provided
      * as parameter
@@ -271,7 +271,6 @@ public class QuizMultipleActivity extends AppCompatActivity {
         }
         return returnValue;
     }
-
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
@@ -302,13 +301,10 @@ public class QuizMultipleActivity extends AppCompatActivity {
         logUsedCapitals = savedInstanceState.getStringArray(KEY_LOG_USED_CAPITALS);
         logCheckedBoxes = savedInstanceState.getBooleanArray(KEY_LOG_CHECKED_CHECKBOXES);
         logCorrectCheckBoxes = savedInstanceState.getBooleanArray(KEY_LOG_CORRECT_CHECKED_CHECKBOXES);
-
     }
-
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-
         savedInstanceState.putStringArrayList(KEY_USED_REGIONS, usedRegionsList);
         savedInstanceState.putString(KEY_SELECTED_REGION, selectedRegion);
         savedInstanceState.putStringArray(KEY_ANSWERS, answers);
@@ -323,9 +319,16 @@ public class QuizMultipleActivity extends AppCompatActivity {
         savedInstanceState.putStringArray(KEY_LOG_USED_CAPITALS, logUsedCapitals);
         savedInstanceState.putBooleanArray(KEY_LOG_CHECKED_CHECKBOXES, logCheckedBoxes);
         savedInstanceState.putBooleanArray(KEY_LOG_CORRECT_CHECKED_CHECKBOXES, logCorrectCheckBoxes);
-
         super.onSaveInstanceState(savedInstanceState);
     }
 
-
+    /**
+     * Disable functionality of back button, to prevent the user from going back to previous
+     * screens during test
+     */
+    @Override
+    public void onBackPressed() {
+        Log.v("onBackPressed", "Phone back button disabled on purpose, to prevent user from" +
+                " going back to previous questions / screens.");
+    }
 }

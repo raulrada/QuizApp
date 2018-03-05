@@ -110,7 +110,6 @@ public class QuizOpenActivity extends AppCompatActivity {
             e.printStackTrace();
             return null;
         }
-
         return map;
     }
 
@@ -180,10 +179,12 @@ public class QuizOpenActivity extends AppCompatActivity {
         });
 
         submitButton.setOnClickListener(new View.OnClickListener() {
-
+            /**
+             * listener for player's click action of the Submit button
+             * @param view
+             */
             @Override
             public void onClick(View view) {
-
                 providedAnswers[currentQuestionNumber - 1] = selectedAnswer;
                 correctAnswers[currentQuestionNumber - 1] = correctAnswer;
 
@@ -209,11 +210,8 @@ public class QuizOpenActivity extends AppCompatActivity {
                     startQuizMultipleActivity.putStringArrayListExtra("KEY_USED_COUNTRIES", usedCountriesList);
                     startActivity(startQuizMultipleActivity);
                 }
-
             }
-
         });
-
     }
 
     /**
@@ -239,7 +237,6 @@ public class QuizOpenActivity extends AppCompatActivity {
 
         //store the correct answer to the question
         correctAnswer = countriesCapitals.get(selectedCountry);
-
     }
 
     /**
@@ -303,7 +300,6 @@ public class QuizOpenActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-
         savedInstanceState.putString(KEY_TESTEE_NAME, testeeName);
         savedInstanceState.putInt(KEY_CURRENT_QUESTION_NUMBER, currentQuestionNumber);
         savedInstanceState.putInt(KEY_CURRENT_OPEN_QUESTION_NUMBER, currentOpenQuestionsNumber);
@@ -315,7 +311,6 @@ public class QuizOpenActivity extends AppCompatActivity {
         savedInstanceState.putBoolean(KEY_SUBMIT_ENABLED, isSubmitEnabled);
         savedInstanceState.putInt(KEY_CURRENT_SCORE, currentScore);
         savedInstanceState.putInt(KEY_MAX_CURRENT_SCORE, maxCurrentScore);
-
         super.onSaveInstanceState(savedInstanceState);
     }
 
@@ -325,8 +320,7 @@ public class QuizOpenActivity extends AppCompatActivity {
      */
     @Override
     public void onBackPressed() {
-
+        Log.v("onBackPressed", "Phone back button disabled on purpose, to prevent user from" +
+                " going back to previous questions / screens.");
     }
-
-
 }

@@ -14,7 +14,6 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
-
 public class WelcomeActivity extends AppCompatActivity {
 
     private static final String KEY_TESTEE_NAME = "TesteeName";
@@ -43,7 +42,6 @@ public class WelcomeActivity extends AppCompatActivity {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
-
 
             /**
              * Listener for the change of text in EditText.
@@ -96,7 +94,6 @@ public class WelcomeActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     @Override
@@ -125,7 +122,6 @@ public class WelcomeActivity extends AppCompatActivity {
 
         super.onSaveInstanceState(savedInstanceState);
     }
-
 
     /**
      * display text in EditText

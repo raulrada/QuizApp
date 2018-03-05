@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -39,7 +40,6 @@ public class ReportActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_report_2);
         setup();
     }
-
 
     public void setup() {
         correctColor = getResources().getColor(R.color.correctAnswerColor);
@@ -99,7 +99,6 @@ public class ReportActivity2 extends AppCompatActivity {
                 findViewById(R.id.checkbox_correct_8), findViewById(R.id.checkbox_correct_9), findViewById(R.id.checkbox_correct_10),
                 findViewById(R.id.checkbox_correct_11)};
 
-
         for (int i = 0; i < playerCheckBoxes.length; i++) {
             playerCheckBoxes[i].setChecked(logCheckedBoxes[i]);
             playerCheckBoxes[i].setEnabled(false); //checkboxes status should not be changed by user
@@ -111,9 +110,7 @@ public class ReportActivity2 extends AppCompatActivity {
             else
                 capitalsTextViews[i].setTextColor(wrongColor);
         }
-
     }
-
 
     /**
      * move to previous part of the report
@@ -134,7 +131,6 @@ public class ReportActivity2 extends AppCompatActivity {
         startPreviousReport.putStringArrayListExtra("USED_REGIONS_LIST", usedRegionsList);
         startActivity(startPreviousReport);
     }
-
 
     /**
      * Restart the quiz for the current player
@@ -171,14 +167,13 @@ public class ReportActivity2 extends AppCompatActivity {
         }
     }
 
-
     /**
      * Disable functionality of back button, to prevent the user from going back to previous
      * screens during test
      */
     @Override
     public void onBackPressed() {
-
+        Log.v("onBackPressed", "Phone back button disabled on purpose, to prevent user from" +
+                " going back to previous questions / screens.");
     }
-
 }

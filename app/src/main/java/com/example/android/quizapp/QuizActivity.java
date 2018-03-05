@@ -25,7 +25,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.*;
 
-
 public class QuizActivity extends AppCompatActivity {
 
     private static final String KEY_TESTEE_NAME = "TesteeName";
@@ -309,10 +308,13 @@ public class QuizActivity extends AppCompatActivity {
         savedInstanceState.putBoolean(KEY_SUBMIT_ENABLED, isSubmitEnabled);
         savedInstanceState.putInt(KEY_CURRENT_SCORE, currentScore);
         savedInstanceState.putInt(KEY_MAX_CURRENT_SCORE, maxCurrentScore);
-
         super.onSaveInstanceState(savedInstanceState);
     }
 
+    /**
+     * allows the user to submit the answer he / she believes is correct
+     * @param view
+     */
     public void submitAnswer(View view) {
 
         int selected = quizRadioGroup.getCheckedRadioButtonId();
@@ -352,6 +354,7 @@ public class QuizActivity extends AppCompatActivity {
      */
     @Override
     public void onBackPressed() {
-
+        Log.v("onBackPressed", "Phone back button disabled on purpose, to prevent user from" +
+                " going back to previous questions / screens.");
     }
 }
