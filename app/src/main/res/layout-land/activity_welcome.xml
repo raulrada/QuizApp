@@ -25,7 +25,7 @@
 
             <TextView
                 android:id="@+id/welcome_text_view"
-                style="@style/text.title"
+                style="@style/TextAppearance.QuizApp.title"
                 android:text="@string/welcome_message" />
 
         </FrameLayout>
@@ -34,7 +34,7 @@
 
             <EditText
                 android:id="@+id/name_edit_text"
-                style="@style/text.edit_text"
+                style="@style/Widget.QuizApp.EditText"
                 android:hint="@string/name" />
 
         </FrameLayout>
@@ -49,7 +49,7 @@
 
             <TextView
                 android:id="@+id/conditions_text_view"
-                style="@style/text.conditions"
+                style="@style/TextAppearance.QuizApp.conditions"
                 android:text="@string/app_info" />
 
         </ScrollView>
@@ -58,7 +58,7 @@
 
             <CheckBox
                 android:id="@+id/agree_checkbox"
-                style="@style/text.checkbox"
+                style="@style/Widget.QuizApp.CompoundButton.CheckBox"
                 android:text="@string/agreement" />
 
         </FrameLayout>
@@ -67,7 +67,7 @@
 
             <Button
                 android:id="@+id/start_quiz_button"
-                style="@style/button"
+                style="@style/Widget.QuizApp.Button"
                 android:onClick="startQuiz"
                 android:text="@string/start_quiz" />
 

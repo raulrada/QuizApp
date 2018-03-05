@@ -6,9 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
     </style>
-
 
     <style name="picture">
         <item name="android:layout_width">match_parent</item>
@@ -27,13 +25,13 @@
     </style>
 
 
-    <style name="text">
+    <style name="TextAppearance.QuizApp" parent="@style/TextAppearance.AppCompat">
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="text.title">
+    <style name="TextAppearance.QuizApp.title">
         <item name="android:layout_marginStart">@dimen/titleMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/titleMarginEnd</item>
         <item name="android:layout_marginTop">@dimen/titleMarginTop</item>
@@ -46,7 +44,10 @@
         <item name="android:shadowRadius">20</item>
     </style>
 
-    <style name="text.edit_text">
+    <style name="Widget.QuizApp.EditText" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/editTextMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/editTextMarginEnd</item>
         <item name="android:layout_marginTop">@dimen/editTextMarginTop</item>
@@ -57,7 +58,7 @@
         <item name="android:imeOptions">flagNoExtractUi</item>
     </style>
 
-    <style name="text.conditions">
+    <style name="TextAppearance.QuizApp.conditions">
         <item name="android:layout_marginStart">@dimen/conditionsMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/conditionsMarginEnd</item>
         <item name="android:layout_marginTop">@dimen/conditionsMarginTop</item>
@@ -67,7 +68,7 @@
         <item name="android:layout_width">match_parent</item>
     </style>
 
-    <style name="text.question_number">
+    <style name="TextAppearance.QuizApp.question_number">
         <item name="android:layout_marginStart">@dimen/questionNumberMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/questionNumberMarginEnd</item>
         <item name="android:layout_marginTop">@dimen/questionNumberMarginTop</item>
@@ -76,14 +77,15 @@
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="text.checkbox">
+    <style name="Widget.QuizApp.CompoundButton.CheckBox" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:paddingLeft">@dimen/checkboxWelcomeTextPaddingLeft</item>
     </style>
 
-    <style name="text.checkbox.quiz">
+    <style name="Widget.QuizApp.CompoundButton.CheckBox.quiz">
         <item name="android:layout_gravity">start</item>
         <item name="android:paddingLeft">@dimen/checkBoxQuizTextPaddingLeft</item>
         <item name="android:layout_marginStart">@dimen/checkBoxQuizMarginStart</item>
@@ -93,7 +95,7 @@
         <item name="android:textSize">@dimen/checkBoxQuizTextSize</item>
     </style>
 
-    <style name="text.checkbox.report">
+    <style name="Widget.QuizApp.CompoundButton.CheckBox.report">
         <item name="android:layout_marginStart">@dimen/checkBoxReportMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/checkBoxReportMarginEnd</item>
         <item name="android:layout_marginTop">@dimen/checkBoxReportMarginTop</item>
@@ -105,8 +107,7 @@
     </style>
 
 
-
-    <style name="text.regular_text_quiz">
+    <style name="TextAppearance.QuizApp.regular_text_quiz">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/regularTextQuizMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/regularTextQuizMarginEnd</item>
@@ -117,7 +118,7 @@
         <item name="android:textStyle">bold|italic</item>
     </style>
 
-    <style name="text.result">
+    <style name="TextAppearance.QuizApp.result">
         <item name="android:layout_width">@dimen/noWidth</item>
         <item name="android:layout_marginStart">@dimen/regularTextResultMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/regularTextResultMarginEnd</item>
@@ -127,19 +128,19 @@
         <item name="android:textColor">@color/regularResultTextColor</item>
     </style>
 
-    <style name="text.result.start">
+    <style name="TextAppearance.QuizApp.result.start">
         <item name="android:layout_alignParentStart">true</item>
     </style>
 
-    <style name="text.result.center">
+    <style name="TextAppearance.QuizApp.result.center">
         <item name="android:layout_centerHorizontal">true</item>
     </style>
 
-    <style name="text.result.end">
+    <style name="TextAppearance.QuizApp.result.end">
         <item name="android:layout_alignParentEnd">true</item>
     </style>
 
-    <style name="text.result2">
+    <style name="TextAppearance.QuizApp.result2">
         <item name="android:layout_width">@dimen/noWidth</item>
         <item name="android:layout_marginStart">@dimen/result2TextResultMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/result2TextResultMarginEnd</item>
@@ -149,7 +150,7 @@
         <item name="android:textColor">@color/regularResultTextColor</item>
     </style>
 
-    <style name="text.summary">
+    <style name="TextAppearance.QuizApp.summary">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/resultTextResultMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/resultTextResultMarginEnd</item>
@@ -159,11 +160,11 @@
         <item name="android:textColor">@color/summaryResultTextColor</item>
     </style>
 
-    <style name="text.summary.start">
+    <style name="TextAppearance.QuizApp.summary.start">
         <item name="android:layout_alignParentStart">true</item>
     </style>
 
-    <style name="text.summary.end">
+    <style name="TextAppearance.QuizApp.summary.end">
         <item name="android:layout_alignParentEnd">true</item>
     </style>
 
@@ -174,7 +175,7 @@
         <item name="android:elevation">@dimen/elevation</item>
     </style>
 
-    <style name="button">
+    <style name="Widget.QuizApp.Button" parent="@style/Widget.AppCompat.Button">
         <item name="android:layout_marginStart">@dimen/buttonMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/buttonMarginEnd</item>
         <item name="android:layout_marginTop">@dimen/buttonMarginTop</item>
@@ -189,7 +190,7 @@
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
-    <style name="button.result">
+    <style name="Widget.QuizApp.Button.result">
         <item name="android:layout_width">@dimen/width_results_buttons</item>
         <item name="android:layout_marginStart">@dimen/resultButtonMarginStart</item>
         <item name="android:layout_marginEnd">@dimen/resultButtonMarginEnd</item>

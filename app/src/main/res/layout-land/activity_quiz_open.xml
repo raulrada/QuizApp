@@ -25,7 +25,7 @@
 
             <TextView
                 android:id="@+id/question_number_text_view_open"
-                style="@style/text.question_number" />
+                style="@style/TextAppearance.QuizApp.question_number" />
 
         </FrameLayout>
 
@@ -33,7 +33,7 @@
 
             <TextView
                 android:id="@+id/question_text_view_open"
-                style="@style/text.title" />
+                style="@style/TextAppearance.QuizApp.title" />
 
         </FrameLayout>
 
@@ -51,7 +51,7 @@
 
                 <EditText
                     android:id="@+id/answer_edit_text_open"
-                    style="@style/text.edit_text"
+                    style="@style/Widget.QuizApp.EditText"
                     android:hint="@string/capital" />
 
                 <RelativeLayout
@@ -61,13 +61,13 @@
 
                     <TextView
                         android:id="@+id/name_text_view_quiz_open"
-                        style="@style/text.regular_text_quiz"
+                        style="@style/TextAppearance.QuizApp.regular_text_quiz"
                         android:layout_alignParentBottom="true"
                         android:text="player" />
 
                     <TextView
                         android:id="@+id/current_score_view_quiz_open"
-                        style="@style/text.regular_text_quiz"
+                        style="@style/TextAppearance.QuizApp.regular_text_quiz"
                         android:layout_alignParentBottom="true"
                         android:layout_toEndOf="@id/name_text_view_quiz_open"
                         android:text="score" />
@@ -82,7 +82,7 @@
 
             <Button
                 android:id="@+id/submit_button_open"
-                style="@style/button"
+                style="@style/Widget.QuizApp.Button"
 
                 android:text="@string/submit" />
 

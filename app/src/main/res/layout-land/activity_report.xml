@@ -13,7 +13,7 @@
 
         <TextView
             android:id="@+id/name_results_text_view"
-            style="@style/text.question_number" />
+            style="@style/TextAppearance.QuizApp.question_number" />
 
     </FrameLayout>
 
@@ -21,7 +21,7 @@
 
         <TextView
             android:id="@+id/question_text_view_results"
-            style="@style/text.title"
+            style="@style/TextAppearance.QuizApp.title"
             android:text="@string/ask_question_result" />
 
     </FrameLayout>
@@ -35,17 +35,17 @@
             android:orientation="horizontal">
 
             <TextView
-                style="@style/text.result.start"
+                style="@style/TextAppearance.QuizApp.result.start"
                 android:layout_weight="1"
                 android:text="@string/country" />
 
             <TextView
-                style="@style/text.result.center"
+                style="@style/TextAppearance.QuizApp.result.center"
                 android:layout_weight="1"
                 android:text="@string/provided_answer" />
 
             <TextView
-                style="@style/text.result.end"
+                style="@style/TextAppearance.QuizApp.result.end"
                 android:layout_weight="1"
                 android:text="@string/correct_answer" />
 
@@ -75,17 +75,17 @@
 
                 <TextView
                     android:id="@+id/text_view_country_0"
-                    style="@style/text.result.start"
+                    style="@style/TextAppearance.QuizApp.result.start"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_answer_0"
-                    style="@style/text.result.center"
+                    style="@style/TextAppearance.QuizApp.result.center"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_correct_answer_0"
-                    style="@style/text.result.end"
+                    style="@style/TextAppearance.QuizApp.result.end"
                     android:layout_weight="1" />
 
             </LinearLayout>
@@ -98,17 +98,17 @@
 
                 <TextView
                     android:id="@+id/text_view_country_1"
-                    style="@style/text.result.start"
+                    style="@style/TextAppearance.QuizApp.result.start"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_answer_1"
-                    style="@style/text.result.center"
+                    style="@style/TextAppearance.QuizApp.result.center"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_correct_answer_1"
-                    style="@style/text.result.end"
+                    style="@style/TextAppearance.QuizApp.result.end"
                     android:layout_weight="1" />
 
             </LinearLayout>
@@ -121,17 +121,17 @@
 
                 <TextView
                     android:id="@+id/text_view_country_2"
-                    style="@style/text.result.start"
+                    style="@style/TextAppearance.QuizApp.result.start"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_answer_2"
-                    style="@style/text.result.center"
+                    style="@style/TextAppearance.QuizApp.result.center"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_correct_answer_2"
-                    style="@style/text.result.end"
+                    style="@style/TextAppearance.QuizApp.result.end"
                     android:layout_weight="1" />
 
             </LinearLayout>
@@ -144,17 +144,17 @@
 
                 <TextView
                     android:id="@+id/text_view_country_3"
-                    style="@style/text.result.start"
+                    style="@style/TextAppearance.QuizApp.result.start"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_answer_3"
-                    style="@style/text.result.center"
+                    style="@style/TextAppearance.QuizApp.result.center"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_correct_answer_3"
-                    style="@style/text.result.end"
+                    style="@style/TextAppearance.QuizApp.result.end"
                     android:layout_weight="1" />
 
             </LinearLayout>
@@ -167,17 +167,17 @@
 
                 <TextView
                     android:id="@+id/text_view_country_4"
-                    style="@style/text.result.start"
+                    style="@style/TextAppearance.QuizApp.result.start"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_answer_4"
-                    style="@style/text.result.center"
+                    style="@style/TextAppearance.QuizApp.result.center"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_correct_answer_4"
-                    style="@style/text.result.end"
+                    style="@style/TextAppearance.QuizApp.result.end"
                     android:layout_weight="1" />
 
             </LinearLayout>
@@ -190,17 +190,17 @@
 
                 <TextView
                     android:id="@+id/text_view_country_5"
-                    style="@style/text.result.start"
+                    style="@style/TextAppearance.QuizApp.result.start"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_answer_5"
-                    style="@style/text.result.center"
+                    style="@style/TextAppearance.QuizApp.result.center"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_correct_answer_5"
-                    style="@style/text.result.end"
+                    style="@style/TextAppearance.QuizApp.result.end"
                     android:layout_weight="1" />
 
             </LinearLayout>
@@ -213,17 +213,17 @@
 
                 <TextView
                     android:id="@+id/text_view_country_6"
-                    style="@style/text.result.start"
+                    style="@style/TextAppearance.QuizApp.result.start"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_answer_6"
-                    style="@style/text.result.center"
+                    style="@style/TextAppearance.QuizApp.result.center"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_correct_answer_6"
-                    style="@style/text.result.end"
+                    style="@style/TextAppearance.QuizApp.result.end"
                     android:layout_weight="1" />
 
             </LinearLayout>
@@ -236,17 +236,17 @@
 
                 <TextView
                     android:id="@+id/text_view_country_7"
-                    style="@style/text.result.start"
+                    style="@style/TextAppearance.QuizApp.result.start"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_answer_7"
-                    style="@style/text.result.center"
+                    style="@style/TextAppearance.QuizApp.result.center"
                     android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/text_view_correct_answer_7"
-                    style="@style/text.result.end"
+                    style="@style/TextAppearance.QuizApp.result.end"
                     android:layout_weight="1" />
 
             </LinearLayout>
@@ -278,14 +278,14 @@
 
             <TextView
                 android:id="@+id/name_text_view_report"
-                style="@style/text.summary.start"
+                style="@style/TextAppearance.QuizApp.summary.start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true" />
 
             <TextView
                 android:id="@+id/current_score_view_report"
-                style="@style/text.summary.end"
+                style="@style/TextAppearance.QuizApp.summary.end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true" />
@@ -302,14 +302,14 @@
 
             <Button
                 android:id="@+id/restart_button"
-                style="@style/button.result"
+                style="@style/Widget.QuizApp.Button.result"
                 android:layout_alignParentStart="true"
                 android:onClick="restart"
                 android:text="@string/restart" />
 
             <Button
                 android:id="@+id/share_button"
-                style="@style/button.result"
+                style="@style/Widget.QuizApp.Button.result"
                 android:layout_alignParentEnd="true"
                 android:onClick="share"
                 android:text="@string/share_result" />
