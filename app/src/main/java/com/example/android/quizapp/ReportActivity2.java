@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -165,6 +166,14 @@ public class ReportActivity2 extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
+    }
+
+    /**
+     * show player's final score in Toast
+     * @param view
+     */
+    public void grade(View view){
+        Toast.makeText(getApplicationContext(), getString(R.string.player_result_toast, testeeName, currentScore, maxScorePossible), Toast.LENGTH_SHORT).show();
     }
 
     /**
