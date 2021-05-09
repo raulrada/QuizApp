@@ -3,7 +3,7 @@ package com.example.android.quizapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.XmlResourceParser;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
